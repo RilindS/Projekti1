@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="email">
+
+    </label>
+    <script>
+        function validateForm(){
+        var name= document.getElementById('name').value;
+        var Lastname= document.getElementById('Lastname').value;
+
+        var email= document.getElementById('email').value;
+        var password= document.getElementById('password').value;
+        var comfirmPassword= document.getElementById('comfirmPassword').value;
+
+        var nameRegex=/^[a-zA-Z\s]+%/;
+        if(!nameRegex.test(name)){
+            alert('Please enter a valid name');
+            return false;
+        }
+        var LastnameRegex=/^[a-zA-Z\s]+%/;
+        if(!LastnameRegex.test(Lastname)){
+            alert('Please enter a valid Lastname');
+                return false;
+        }
+        var emailRegex=/^[^s@]+@[]/;
+
+    }
+    </script>
+</body>
+</html>
