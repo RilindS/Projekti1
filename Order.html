@@ -161,6 +161,13 @@
             </form>
             <p><small>Pasi te keni permbushur kerkesat e mesiperme, do te pranoni me email detajet e porosise suaj.</small></p>
         </div>
+        <div id="kontenti">
+            <header>
+                <h2>images</h2>
+                <img id="slideShow"/>
+            </header>
+            <button onclick="chganeImg()">Next</button>
+        </div>
      </main>
      <footer>
         <div class="f">
@@ -191,5 +198,20 @@
                 
             </div>
         </footer>
+        <script>
+            let i=0;
+            let imgArray =['blue-taxi1.png','e-taxi-tesla.png','golden-taxi.png','online-taxi.png','Pink-taxi.png','urban-taxi.png'];
+       
+            function changeImg(){
+                document.getElementById('slideshow').scr=imgArray[i];
+                    if(i<imgArray.length-1){
+                        i++;
+                    }
+                    else{
+                        i=0;
+                        }
+            }
+                document.addEventListener(onload,changeImg());
+       </script>
 </body>
 </html>

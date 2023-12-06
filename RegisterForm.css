@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#active, .header-nav ul li a:hover { 
+    color: #f76d37;
+    font-size: 18px;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+}
+
+.form{
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-header{
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    background-color: #fff;
+}
+
+form{
+    margin-top: 30px;
+}
+
+.form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+.field input,
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+.field input{
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid lightgray;
+}
+
+.field input:focus{
+    border-bottom-width:2px;
+}
+
+.eye-icon{
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color:lightslategray;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.field button{
+    color: #fff;
+    background-color: blue;
+    transition:all 0.3 ease ;
+    cursor: pointer;
+}
+.field button:hover{
+    background-color: blue;
+}
+.form-link{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-link span,
+.form-link a{
+    font-size: 14px;
+    font-weight: 400;
+    color: grey;
+}
+
+.form a{
+    color: blue;
+    text-decoration: none;
+}
+.btn-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px
+  }
+.btn-group button {
+    flex-basis: 45%;
+    background: rgb(77, 165, 138);
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+  }
+
+.input-group{
+    height: fit-content;
+}
+.btn-group button.disable {
+    background: #eaeaea;
+    color: #555;
+  }
+  .input-group #errorFName,
+  .input-group #errorLName {
+    margin-top: 5px;
+    width: 345px;
+    font-size: 15px;
+  }
+.error-message {
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+
+}
+

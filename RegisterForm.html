@@ -3,35 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <link rel="stylesheet" href="RegisterForm.css">
+    <title>Register form</title>
     
-    <label for="email">
+</head>
+<!-- onsubmit=" validateForm();" action="home.html" -->
+<body>
+    <form id="myForm" >
+        
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                    <header class="login-header">Register</header>
+         
+           
+                    <div class="field input-field" >
+                        <input id="firstName" type="text" placeholder="Name" class="input"  >
 
-    </label>
-    <script>
-        function validateForm(){
-        var name= document.getElementById('name').value;
-        var Lastname= document.getElementById('Lastname').value;
+                    </div>
+                    <div class="error-message" id="firstNameError"></div>
+                    <!-- <p id="errorFName" style="color: red;"></p> -->
 
-        var email= document.getElementById('email').value;
-        var password= document.getElementById('password').value;
-        var comfirmPassword= document.getElementById('comfirmPassword').value;
+                  
 
-        var nameRegex=/^[a-zA-Z\s]+%/;
-        if(!nameRegex.test(name)){
-            alert('Please enter a valid name');
-            return false;
-        }
-        var LastnameRegex=/^[a-zA-Z\s]+%/;
-        if(!LastnameRegex.test(Lastname)){
-            alert('Please enter a valid Lastname');
-                return false;
-        }
-        var emailRegex=/^[^s@]+@[]/;
+                    <div class="field input-field">
 
-    }
-    </script>
+                        <input id="lastName" type="text" placeholder="Last name" class="input"  >
+                    </div>                    
+                    <div class="error-message" id="lastNameError"></div>
+                    <!-- <p id="errorLName" style="color: red;"></p> -->
+
+
+
+                    <div class="field input-field">
+
+                        <input type="email" placeholder="Email" class="input" id="email" >
+
+                    </div>
+                    <div class="error-message" id="emailError"></div>
+                    <!-- <p id="errorEmail" style="color: red;"></p> -->
+
+
+
+                    <div class="field input-field">
+
+                        <input type="password" placeholder="Password" class="password" id="password" >
+
+                        <i class="bx bx-hide eye-icon"></i>
+                    </div>
+                        <div class="error-message" id="passwordError"></div>
+                        <!-- <p id="errorPassword" style="color: red;"></p> -->
+
+
+
+                    <div class="field input-field">
+
+                        <input type="password" placeholder="Confirm Password" class="password" id="confirmPassword" >
+
+                        <i class="bx bx-hide eye-icon"></i>
+                    </div>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                        <!-- <p id="errorConfirmPassword" style="color: red;"></p> -->
+
+                    <div class="btn-group">
+                    <!--onclick="validateForm()" <button type="button" id="submit" onclick="validateForm()">Register</button> -->
+                         <button  type="button" onclick="validateForm()">Register</button> 
+                    </div>
+
+            </div>
+        </div>
+    </section>
+</form>
+<script >
+    function validateForm(){     
+       let firstName = document.getElementById("firstName").value;
+       let firstNameError = document.getElementById('firstNameError');
+
+       let lastname = document.getElementById('lastName').value;
+       let lastNameError = document.getElementById('lastNameError');
+      
+       let email = document.getElementById('email').value;
+       let emailError = document.getElementById('emailError');
+
+       let password = document.getElementById('password').value;
+       let passwordError = document.getElementById('passwordError');
+
+       let confirmPassword = document.getElementById('confirmPassword').value;
+       let confirmPasswordError = document.getElementById('confirmPasswordError');
+
+       firstNameError.innerText='';
+       lastNameError.innerText='';
+       emailError.innerText='';
+       passwordError.innerText='';
+       confirmPasswordError.innerText='';
+
+
+   
+     let regxname= /[a-zA-Z]/ ;
+   if(firstName.trim()==""||!regxname.test(firstName)){
+   firstNameError.innerText='invalid name';
+
+     return;
+   }
+   let LastnameRegex=/[a-zA-Z]/;
+    if (!LastnameRegex.test(lastname)){
+     lastnameError.innerText='invalid last name';
+
+        return;
+   }
+   var emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailRegex.test(email)){
+      emailError.innerText='Invalid email';
+
+    return;
+   }
+    if(password.length<=6){
+       passwordError.innerText = 'invalid password';
+
+    return;
+   }
+     if( password !== confirmPassword){
+       //alert('no blank email');
+     //  document.getElementById('confirmPasswordid').style.visibility='visible';
+     confirmPasswordError.innerText = 'password in not same';
+     return;
+   }
+
+}
+
+
+
+
+</script>  
 </body>
 </html>
+
+
