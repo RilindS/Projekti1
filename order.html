@@ -16,6 +16,7 @@
         <div class="links">
             <a href="login-form.html" >LOG IN</a>
             <a href="home.html" id="active">HOME</a>
+            <a href="kompanite.html">KOMPANITE</a>
             <a href="order.html">ORDER</a>
             <a href="contact.html">CONTACT</a>
         </div>
@@ -26,58 +27,7 @@
      </div>
 
      <main>
-        <div class="rezervimi">
-            <h1>REZERVO UDHETIMIN TEND</h1>
-            <form action="#">
-                <div class="input-field">
-                    <p>Emri dhe Mbiemri</p>
-                    <input type="text" placeholder="Emri dhe Mbiemri juaj">
-                </div>
-                <div class="input-field">
-                    <p>Email</p>
-                    <input type="email" placeholder="Shkruaj email adresen tuaj:">
-                </div>
-                <div class="input-field">
-                    <p>Numri kontaktues</p>
-                    <input type="number" placeholder="Shkruaj numrin e telefonit:">
-                </div>
-                <div class="input-field">
-                    <p>Shkruaj vendndodhjen tuaj</p>
-                    <input type="text" placeholder="Tregoni ku gjendeni:">
-         </div>  
-         </form>
-
-            <div class="zgjedhje">
-                <div id="kontenti">
-                    <header>
-                    <h2>Zgjedh udhetuesin</h2>
-                    <img id="slideshow" />
-                    </header>
-                    <button onclick="changeImg()">Next</button>
-                </div>
-                <script>
-                    let i = 0;
-                    let imgArray = ['blue-taxi2.png','e-taxi-tesla.png','online-taxi.png','pink-taxi2.png','golden-taxi2.png','urban-taxi.png'];
-            
-                    function changeImg(){
-                        document.getElementById('slideshow').src = imgArray[i];
-            
-                        if(i< imgArray.length -1){
-                            i++;
-                        }
-                        else{
-                            i=0;
-                        }
-                    }
-            
-                    document.addEventListener(onload, changeImg());
-                </script>
-            
-
-         
-            
-            <p><small>Pasi te keni permbushur kerkesat e mesiperme, do te pranoni me email detajet e porosise suaj.</small></p>
-        </div>
+        
         <section class="table-section">
             <h1 class="main-h1">CMIMORJA SIPAS LOKACIONIT DHE DESTINACIONIT</h1>
             <table>
@@ -177,7 +127,47 @@
                 </tbody>
             </table>
         </section>
-            
+            <div class="rezervimi">
+            <h1>REZERVO UDHETIMIN TEND</h1>
+            <form action="#">
+                <div class="input-field">
+                    <p>Emri dhe Mbiemri</p>
+                    <input type="text" placeholder="Emri dhe Mbiemri juaj">
+                </div>
+                <div class="input-field">
+                    <p>Email</p>
+                    <input type="email" placeholder="Shkruaj email adresen tuaj:">
+                </div>
+                <div class="input-field">
+                    <p>Numri kontaktues</p>
+                    <input type="number" placeholder="Shkruaj numrin e telefonit:">
+                </div>
+                <div class="input-field">
+                    <p>Shkruaj vendndodhjen tuaj</p>
+                    <input type="text" placeholder="Tregoni ku gjendeni:">
+                </div>
+
+                <div class="zgjedhje">
+                    <p>Zgjedh kompanine</p>
+        <select>
+            <option value="Taxi">BLUE TAXI</option>
+            <option value="Taxi">E-TAXI TESLA</option>
+            <option value="Taxi">ONLINE TAXI</option>
+            <option value="Taxi">PINK TAXI</option>
+            <option value="Taxi">GOLDEN Taxi</option>
+            <option value="Taxi">URBAN Taxi</option>
+        </select>
+                </div>
+            </form>
+            <p><small>Pasi te keni permbushur kerkesat e mesiperme, do te pranoni me email detajet e porosise suaj.</small></p>
+        </div>
+        <div id="kontenti">
+            <header>
+                <h2>images</h2>
+                <img id="slideShow"/>
+            </header>
+            <button onclick="chganeImg()">Next</button>
+        </div>
      </main>
      <footer>
         <div class="f">
@@ -208,5 +198,20 @@
                 
             </div>
         </footer>
+        <script>
+            let i=0;
+            let imgArray =['blue-taxi1.png','e-taxi-tesla.png','golden-taxi.png','online-taxi.png','Pink-taxi.png','urban-taxi.png'];
+       
+            function changeImg(){
+                document.getElementById('slideshow').scr=imgArray[i];
+                    if(i<imgArray.length-1){
+                        i++;
+                    }
+                    else{
+                        i=0;
+                        }
+            }
+                document.addEventListener(onload,changeImg());
+       </script>
 </body>
 </html>
