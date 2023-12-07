@@ -1,3 +1,6 @@
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 *{
@@ -104,36 +107,10 @@ form{
     color: blue;
     text-decoration: none;
 }
-.btn-group {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 20px
-  }
-.btn-group button {
-    flex-basis: 45%;
-    background: rgb(77, 165, 138);
-    color: #fff;
-    height: 40px;
-    border-radius: 20px;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-  }
 
-.input-group{
-    height: fit-content;
+.form-content a:hover{
+    text-decoration: underline;
 }
-.btn-group button.disable {
-    background: #eaeaea;
-    color: #555;
-  }
-  .input-group #errorFName,
-  .input-group #errorLName {
-    margin-top: 5px;
-    width: 345px;
-    font-size: 15px;
-  }
 .error-message{
     color: red;
     margin-top: 10px;
@@ -141,4 +118,13 @@ form{
     justify-content: flex-start;
 
 }
+
+
+
+
+
+
+
+
+
 

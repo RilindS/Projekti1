@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login And Signin</title>
-    <link rel="stylesheet" href="login-punimi.css">
+    <link rel="stylesheet" href="login-form.css">
     
 </head>
 <header>
@@ -17,20 +17,24 @@
 
                 <form action="#">
                     <div class="field input-field">
-                        <input type="email" placeholder="Email" class="input">
+                        <input id="email" type="email" placeholder="Email" class="input">
                     </div>
+                    <div class="error-message" id="emailError"></div>
+
 
                     <div class="field input-field">
-                        <input type="password" placeholder="Password" class="password">
+                        <input id="password" type="password" placeholder="Password" class="password">
                         <i class="bx bx-hide eye-icon"></i>
                     </div>
+                    <div class="error-message" id="passwordError"></div>
+
 
                     <div class="form-link">
                         <a href="#" class="forgot-password">Forgot Password?</a>
                     </div>
 
                     <div class="field button-field">
-                        <button>Login</button>
+                        <button type="button" onclick="validateForm()">Login</button>
                     </div>
 
                 </form>
@@ -41,5 +45,29 @@
             </div>
         </div>
     </section>
+    <script>
+
+function validateForm(){     
+    let email = document.getElementById('email').value;
+       let emailError = document.getElementById('emailError');
+
+       let password = document.getElementById('password').value;
+       let passwordError = document.getElementById('passwordError');
+
+       emailError.innerText='';
+       passwordError.innerText='';
+       var emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(email.trim()==''||!emailRegex.test(email)){
+      emailError.innerText='Invalid email';
+
+    return;
+   }
+   if(password.trim()==''||password.length<=6){
+       passwordError.innerText = 'invalid password';
+
+    return;
+   }
+}
+    </script>
 </body>
 </html>

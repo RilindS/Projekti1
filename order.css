@@ -96,3 +96,55 @@ select{
     text-align: center;
     cursor: pointer;
 }
+.input-group #errorFName,
+.input-group #errorLName {
+  margin-top: 5px;
+  width: 345px;
+  font-size: 15px;
+}
+.btn-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px
+  }
+.btn-group button {
+    flex-basis: 45%;
+    background: rgb(77, 165, 138);
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+  }
+
+.input-group{
+    height: fit-content;
+}
+.btn-group button.disable {
+    background: #eaeaea;
+    color:red;
+  }
+.error-message{
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+}
+.butoni{
+    flex-basis: 45%;
+    background: rgb(77, 165, 138);
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.butoni {
+    width: 200%;
+    display: flex;
+    justify-content: center;
+    padding: 20px
+  }

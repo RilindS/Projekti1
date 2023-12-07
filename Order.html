@@ -129,26 +129,40 @@
         </section>
             <div class="rezervimi">
             <h1>REZERVO UDHETIMIN TEND</h1>
-            <form action="#">
+            <form id="myForm" action="#">
+          
                 <div class="input-field">
                     <p>Emri dhe Mbiemri</p>
-                    <input type="text" placeholder="Emri dhe Mbiemri juaj">
+                    <input id="NameAndLastName" type="text" placeholder="Emri dhe Mbiemri juaj">
                 </div>
+                <div class="error-message" id="NameAndLastNameError"></div>
+
                 <div class="input-field">
                     <p>Email</p>
-                    <input type="email" placeholder="Shkruaj email adresen tuaj:">
+                    <input id="email" type="email" placeholder="Shkruaj email adresen tuaj:">
                 </div>
+                <div class="error-message" id="emailError"></div>
+
                 <div class="input-field">
                     <p>Numri kontaktues</p>
-                    <input type="number" placeholder="Shkruaj numrin e telefonit:">
+                    <input id="Nrcontact" type="number" placeholder="Shkruaj numrin e telefonit:">
                 </div>
+                <div class="error-message" id="NrcontactError"></div>
+
                 <div class="input-field">
                     <p>Shkruaj vendndodhjen tuaj</p>
-                    <input type="text" placeholder="Tregoni ku gjendeni:">
+                    <input id="location" type="text" placeholder="Tregoni ku gjendeni:">
+                </div>
+                <div class="error-message" id="locationError"></div>
+                <div class="btn-group">
+                    <!-- <button type="button" onclick="validateForm(event)">Dergo Porosine</button> -->
+
                 </div>
 
                 <div class="zgjedhje">
                     <p>Zgjedh kompanine</p>
+
+                    
         <select>
             <option value="Taxi">BLUE TAXI</option>
             <option value="Taxi">E-TAXI TESLA</option>
@@ -157,17 +171,13 @@
             <option value="Taxi">GOLDEN Taxi</option>
             <option value="Taxi">URBAN Taxi</option>
         </select>
-                </div>
+                </div class="butoni">
+                <button type="button" onclick="validateForm()">Dergo Porosine</button>
+
             </form>
             <p><small>Pasi te keni permbushur kerkesat e mesiperme, do te pranoni me email detajet e porosise suaj.</small></p>
         </div>
-        <div id="kontenti">
-            <header>
-                <h2>images</h2>
-                <img id="slideShow"/>
-            </header>
-            <button onclick="chganeImg()">Next</button>
-        </div>
+      
      </main>
      <footer>
         <div class="f">
@@ -199,19 +209,51 @@
             </div>
         </footer>
         <script>
-            let i=0;
-            let imgArray =['blue-taxi1.png','e-taxi-tesla.png','golden-taxi.png','online-taxi.png','Pink-taxi.png','urban-taxi.png'];
-       
-            function changeImg(){
-                document.getElementById('slideshow').scr=imgArray[i];
-                    if(i<imgArray.length-1){
-                        i++;
-                    }
-                    else{
-                        i=0;
-                        }
-            }
-                document.addEventListener(onload,changeImg());
+
+            function validateForm() {
+    let NameAndLastName = document.getElementById('NameAndLastName').value;
+    let NameAndLastNameError = document.getElementById('NameAndLastNameError');
+
+    let email = document.getElementById("email").value;
+    let emailError = document.getElementById('emailError');
+
+    let Nrcontact = document.getElementById('Nrcontact').value;
+    let NrcontactError = document.getElementById('NrcontactError');
+
+    let location = document.getElementById('location').value;
+    let locationError = document.getElementById('locationError');
+
+    NameAndLastNameError.innerText = '';
+    emailError.innerText = '';
+    NrcontactError.innerText = '';
+    locationError.innerText = '';
+
+    let regxNameAndLastName = /[a-zA-Z]/;
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    let NrcontactRegex =  /^\+?[0-9]{10,}$/;
+    let locationRegex = /[a-zA-Z]/;
+
+    if (NameAndLastName.trim() === "" || !regxNameAndLastName.test(NameAndLastName)) {
+        NameAndLastNameError.innerText = 'invalid name and LastName';
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        emailError.innerText = 'invalid email';
+        return;
+    }
+
+    if (!NrcontactRegex.test(Nrcontact)) {
+        NrcontactError.innerText = 'Invalid nrContact';
+        return;
+    }
+
+    if (!locationRegex.test(location)) {
+        locationError.innerText = 'invalid location';
+    }
+
+}   
        </script>
 </body>
 </html>
