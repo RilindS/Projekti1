@@ -1,0 +1,35 @@
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 5px;
+    width: 100%;
+    
+}
+img{
+    justify-items: flex-start;
+}
+
+.links{
+    display: flex;
+    text-decoration: none;
+    padding-right: 5px;
+}
+
+a{
+    font-size: 20px;
+    padding: 20px;
+    margin: 0;
+    font-weight: bolder;
+    color: white;
+    display: flex;
+    text-decoration: none;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#active a:hover{
+    color: aquamarine;
+    font-size: 16px;
+}
