@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="header-punimi.css">
+    <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="order.css">
+     <script>
+            let i=0;
+            let imgArray =['blue-taxi2.png','e-taxi-tesla.png','golden-taxi.png','online-taxi.png','Pink-taxi.png','urban-taxi.png'];
+       
+            function changeImg(){
+                document.getElementById('slideshow').scr=imgArray[i];
+                    if(i<imgArray.length-1){
+                        i++;
+                    }
+                    else{
+                        i=0;
+                        }
+            }
+                document.addEventListener(onload,changeImg());
+       </script>
     <title>YOUR ORDER</title>
 </head>
 <body>
@@ -127,7 +142,7 @@
             </table>
         </section>
             <div class="rezervimi">
-            <h1>REZERVO UDHETIMIN TEND</h1>
+                <h1>REZERVO UDHETIMIN TEND</h1>
             <form id="myForm" action="#">
           
                 <div class="input-field">
@@ -155,28 +170,23 @@
                 <div class="error-message" id="locationError"></div>
                 <div class="btn-group">
                     <!-- <button type="button" onclick="validateForm(event)">Dergo Porosine</button> -->
-
+                    
                 </div>
             </form>
-
-        <div class="zgjedhje">
-                    <p>Zgjedh kompanine</p>    
-        <select>
-            <option value="Taxi">BLUE TAXI</option>
-            <option value="Taxi">E-TAXI TESLA</option>
-            <option value="Taxi">ONLINE TAXI</option>
-            <option value="Taxi">PINK TAXI</option>
-            <option value="Taxi">GOLDEN Taxi</option>
-            <option value="Taxi">URBAN Taxi</option>
-        </select>
-                <div class="butoni">
-                <button type="button" onclick="validateForm()">Dergo Porosine</button>
-                </div>
-        
+            <div>        
             <p><small>Pasi te keni permbushur kerkesat e mesiperme, do te pranoni me email detajet e porosise suaj.</small></p>
         </div>
-      
-     </main>
+        <div id="kontenti">
+            <header>
+                <h2>Zgjedh operatorin</h2>
+                <img id="slideShow"/>
+            </header>
+            <button onclick="chganeImg()">Next</button>
+        </div> 
+        <button class="porosia-butoni" type="button" onclick="validateForm()">Dergo Porosine</button>
+    </div>
+       
+    </main>
      <footer>
         <div class="f">
             <h2>ABOUT US</h2>

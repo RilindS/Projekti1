@@ -148,3 +148,16 @@ select{
     justify-content: center;
     padding: 20px
   }
+
+  .porosia-butoni{
+    display: block;
+    margin-left: 40%;
+    margin-top:10px;
+    background-color: orangered;
+    font-size: 14px;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 6px;
+    color: whitesmoke;
+    cursor: pointer;
+  }
