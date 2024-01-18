@@ -6,21 +6,7 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="order.css">
-     <script>
-            let i=0;
-            let imgArray =['blue-taxi2.png','e-taxi-tesla.png','golden-taxi.png','online-taxi.png','Pink-taxi.png','urban-taxi.png'];
-       
-            function changeImg(){
-                document.getElementById('slideshow').scr=imgArray[i];
-                    if(i<imgArray.length-1){
-                        i++;
-                    }
-                    else{
-                        i=0;
-                        }
-            }
-                document.addEventListener(onload,changeImg());
-       </script>
+  
     <title>YOUR ORDER</title>
 </head>
 <body>
@@ -178,10 +164,10 @@
         </div>
         <div id="kontenti">
             <header>
-                <h2>Zgjedh operatorin</h2>
+                <h2>Shiqo foto te taxive tane</h2>
                 <img id="slideShow"/>
             </header>
-            <button onclick="chganeImg()">Next</button>
+            <button class ="ndrrimi-fotove" type="button"  onclick="chganeImg()">Next</button>
         </div> 
         <button class="porosia-butoni" type="button" onclick="validateForm()">Dergo Porosine</button>
     </div>
@@ -217,6 +203,22 @@
             </div>
         </footer>
         <script>
+               
+            let i=0;
+            let imgArray =['blue-taxi2.png','e-taxi-tesla.png','golden-taxi.png','online-taxi.png','Pink-taxi.png','urban-taxi.png'];
+       
+            function changeImg(){
+                
+                document.getElementById('slideshow').scr=imgArray[i];
+                    if(i<imgArray.length-1){
+                        i++;
+                    }
+                    else{
+                        i=0;
+                        }
+            }
+                document.addEventListener(onload,changeImg());
+       
 
             function validateForm() {
     let NameAndLastName = document.getElementById('NameAndLastName').value;
