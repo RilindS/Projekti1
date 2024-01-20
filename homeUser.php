@@ -1,5 +1,15 @@
 
+<?php
 
+@include 'config.php';
+
+session_start();
+
+if(!isset($_SESSION['user_name'])){
+   header('location:login_form.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +29,8 @@
             <img src="images/taxi-logo.png" alt="logo" width="20%">
         </div>
         <div class="links">
-        
-            
+        <!-- <a href="logout.php" class="btn">LOG OUT</a> -->
+
             <a href="login_form.php" >LOG IN</a>
             <a href="home.php" id="active">HOME</a>
             <a href="about.php">ABOUT</a>
@@ -36,7 +46,7 @@
               
                   
       </div>
-    
+      <h1>welcome User<span><?php echo $_SESSION['user_name'] ?></span></h1>
 
       <div class="Sherbimet">
           <h1>BASHKEPUNIMI ME NE OFRON:</h1>

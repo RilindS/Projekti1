@@ -14,6 +14,7 @@
         <div class="links">
             <a href="Register-LogIn.php" >LOG IN</a>
             <a href="home.php" id="active">HOME</a>
+            <a href="about.php">ABOUT</a>
             <a href="order.php">ORDER</a>
             <a href="contact.php">CONTACT</a>
             <a href="aplikimi.php">APLIKO PER PUNE</a>

@@ -16,10 +16,12 @@
         </div>
         <div class="links">
             <a href="Register-LogIn.php" >LOG IN</a>
-            <a href="home.html" id="active">HOME</a>
-            <a href="order.html">ORDER</a>
-            <a href="contact.html">CONTACT</a>
+            <a href="home.php" id="active">HOME</a>
+            <a href="about.php">ABOUT</a>
+            <a href="order.php">ORDER</a>
+            <a href="contact.php">CONTACT</a>
             <a href="aplikimi.php">APLIKO PER PUNE</a>
+            
 
         </div>
      </header>
@@ -131,36 +133,35 @@
         </section>
             <div class="rezervimi">
                 <h1>REZERVO UDHETIMIN TEND</h1>
-            <form id="myForm" action="#">
+            <form id="myForm" action="rezervimi_databaz.php" method="post">
           
                 <div class="input-field">
                     <p>Emri dhe Mbiemri</p>
-                    <input id="NameAndLastName" type="text" placeholder="Emri dhe Mbiemri juaj">
+                    <input id="NameAndLastName" name="name"type="text" placeholder="Emri dhe Mbiemri juaj">
                 </div>
-                <div class="error-message" id="NameAndLastNameError"></div>
+                <div class="error-message" id="NameAndLastNameError" ></div>
 
                 <div class="input-field">
                     <p>Email</p>
-                    <input id="email" type="email" placeholder="Shkruaj email adresen tuaj:">
+                    <input id="email" type="email"  name="email"placeholder="Shkruaj email adresen tuaj:">
                 </div>
                 <div class="error-message" id="emailError"></div>
 
                 <div class="input-field">
                     <p>Numri kontaktues</p>
-                    <input id="Nrcontact" type="number" placeholder="Shkruaj numrin e telefonit:">
+                    <input id="Nrcontact" type="number" name="Nrcontact" placeholder="Shkruaj numrin e telefonit:">
                 </div>
                 <div class="error-message" id="NrcontactError"></div>
 
                 <div class="input-field">
                     <p>Shkruaj vendndodhjen tuaj</p>
-                    <input id="location" type="text" placeholder="Tregoni ku gjendeni:">
+                    <input id="location" type="text" name="location" placeholder="Tregoni ku gjendeni:">
                 </div>
                 <div class="error-message" id="locationError"></div>
                 <div class="btn-group">
-                    <!-- <button type="button" onclick="validateForm(event)">Dergo Porosine</button> -->
                     
                 </div>
-            </form>
+           
             <div>        
             <p><small>Pasi te keni permbushur kerkesat e mesiperme, do te pranoni me email detajet e porosise suaj.</small></p>
         </div>
@@ -169,10 +170,11 @@
                 <h2>Shiqo foto te taxive tane</h2>
                 <img id="slideShow"/>
             </header>
-            <button class ="ndrrimi-fotove" type="button"  onclick="chganeImg()">Next</button>
+            <!-- <button class ="ndrrimi-fotove" type="button"  onclick="chganeImg()">Next</button> -->
         </div> 
-        <button class="porosia-butoni" type="button" onclick="validateForm()">Dergo Porosine</button>
-    </div>
+        <button name="submit"class="porosia-butoni" type="submit" onclick="validateForm()">Dergo Porosine</button>
+   </form> 
+ </div>
        
     </main>
      <footer>
@@ -243,7 +245,7 @@
     let regxNameAndLastName = /[a-zA-Z]/;
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    let NrcontactRegex =  /^\+?[0-9]{10,}$/;
+    let NrcontactRegex =  /[0-9]/;
     let locationRegex = /[a-zA-Z]/;
 
     if (NameAndLastName.trim() === "" || !regxNameAndLastName.test(NameAndLastName)) {

@@ -37,40 +37,40 @@
                         <option value="Bazist">Bazist/e</option>
                         <option value="Autolarje">Autolarje</option>
             </select>
-            <form action="#">
+            <form  action="aplikimet_databaz.php" method="post">
                 <div class="input-field">
                     <p>Emri</p>
-                    <input id="emri" type="text" placeholder="Emri juaj">
+                    <input id="emri" name="emri" type="text" placeholder="Emri juaj">
                 </div>
                 <div class="error-message" id="emriError"></div>
 
                 <div class="input-field">
                     <p>Mbiemri</p>
-                    <input id="mbiemri" type="text" placeholder="Mbiemri juaj">
+                    <input id="mbiemri" name="mbiemri" type="text" placeholder="Mbiemri juaj">
                 </div>
                 <div class="error-message" id="mbiemriError"></div>
 
                 <div class="input-field">
                     <p>Email</p>
-                    <input id="email" type="email" placeholder="Shkruaj email adresen tuaj:">
+                    <input id="email" name="email" type="email" placeholder="Shkruaj email adresen tuaj:">
                 </div>
                 <div class="error-message" id="emailError"></div>
 
                 <div class="input-field">
                     <p>Nenshtetesia</p>
-                    <input id="nenshtetesia" type="text" placeholder="Prejardhja juaj:">
+                    <input id="nenshtetesia" name="nenshtetesia" type="text" placeholder="Prejardhja juaj:">
                 </div>
                 <div class="error-message" id="nenshtetsiaError"></div>
 
                 <div class="input-field">
                     <p>Data e lindjes</p>
-                    <input id="datalindjes" type="date" >
+                    <input id="datalindjes" name="datalindjes" type="date" >
                 </div>
                 <div class="error-message" id="datalindjesError"></div>
 
                  <div class="input-field">
                     <p>Qyteti</p>
-                    <select id="qytetet">
+                    <select id="qytetet" name="qytetet">
                         <option value="" disabled selected>Zgjidh një qytet</option>
                         <option value="Prishtine">Prishtine</option>
                         <option value="Peje">Peje</option>
@@ -86,7 +86,7 @@
 
                 <div id="input-field">
                     <p>Adresa</p>
-                    <textarea id="address" name="adress" cols="70" rows="3"></textarea>
+                    <textarea id="address" name="address" cols="70" rows="3"></textarea>
                 </div>
                 <div class="error-message" id="addressError"></div>
 
@@ -94,7 +94,7 @@
                
                 
                 <div class ="field button-field">
-                    <button class="porosia-butoni" type="button" onclick="validateForm()">Dergo Aplikimin</button>
+                    <button name="submit" class="porosia-butoni" type="submit" onclick="validateForm()">Dergo Aplikimin</button>
                 </div>
                 
 

@@ -1,5 +1,14 @@
+<?php
 
+@include 'config.php';
 
+session_start();
+
+if(!isset($_SESSION['admin_name'])){
+   header('location:homeAdmin.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,14 +28,14 @@
             <img src="images/taxi-logo.png" alt="logo" width="20%">
         </div>
         <div class="links">
-        
-            
-            <a href="login_form.php" >LOG IN</a>
-            <a href="home.php" id="active">HOME</a>
-            <a href="about.php">ABOUT</a>
-            <a href="order.php">ORDER</a>
-            <a href="contact.php">CONTACT</a>
-            <a href="aplikimi.php">APLIKO PER PUNE</a>
+            <a href="dashboard.php">DASHBOARD</a>
+             <a href="home.php" class="btn">LOG OUT</a> 
+             <!-- <a href="login_form.php" >LOG IN</a>  -->
+            <a href="homeAdmin.php" id="active">HOME</a>
+            <!-- <a href="about.php">ABOUT</a>  -->
+            <!-- <a href="order.php">ORDER</a> -->
+            <!-- <a href="contact.php">CONTACT</a> -->
+            <!-- <a href="aplikimi.php">APLIKO PER PUNE</a> -->
         </div>
      </header>
      <main>
@@ -36,7 +45,7 @@
               
                   
       </div>
-    
+      <h1>welcome Admin <span><?php echo $_SESSION['admin_name'] ?></span></h1>
 
       <div class="Sherbimet">
           <h1>BASHKEPUNIMI ME NE OFRON:</h1>

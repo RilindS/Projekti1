@@ -1,10 +1,12 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="contact.css">
+     <link rel="stylesheet" href="contact.css"> 
     <link rel="stylesheet" href="footer.css">
     <title>CONTACT US</title>
 </head>
@@ -28,24 +30,75 @@
             <h1 id="h1-main">CONTACT US</h1>
         </div>
         <div class="container">
-            <form action="form">
+            <form action="Kontaki_databaz.php" method="post">
           
               <label for="fname">Emri</label>
               <input type="text" id="fname" name="firstname" placeholder="Emri juaj..">
-          
+              <div class="error-message" id="fnameError"></div>
+
               <label for="lname">Mbiemri</label>
               <input type="text" id="lname" name="lastname" placeholder="Mbiemri..">
+              <div class="error-message" id="lnameError"></div>
 
               <label for="lname">Email</label>
               <input type="text" id="Email" name="email" placeholder="Emaili juaj..">
-          
+              <div class="error-message" id="EmailError"></div>
+
               <label for="subject">Ne rast se keni ndonje ankese, ju lutem shkruani ne detaje ne rubriken e meposhtme</label>
               <textarea id="subject" name="subject" placeholder="Paraqit ankesen tende.." style="height:200px"></textarea>
-          
-              <input type="submit" value="Submit">
+              <div class="error-message" id="subjectError"></div>
+
+            <div >
+            <button name="submit" class="porosia-butoni" type="submit" onclick="validateForm()">Submit</button>
+
+            </div>
           
             </form>
           </div>
+          <script>
+
+            function validateForm(){
+                let fname=document.getElementById('fname').value;
+            let fnameError=document.getElementById('fnameError');
+
+            let lname=document.getElementById('lname').value;
+            let lnameError=document.getElementById('lnameError');
+
+            let Email=document.getElementById('Email').value;
+            let EmailError=document.getElementById('EmailError');
+
+            let subject=document.getElementById('subject').value;
+            let subjectError=document.getElementById('subjectError');
+         
+            fnameError.innerText='';
+            lnameError.innerText='';
+            EmailError.innerText='';
+            subjectError.innerText='';  
+        
+            let regxname= /[a-zA-Z]/ ;
+
+            if(fname.trim()=='' || !regxname.test(fname)){
+                fnameError.innerText='emri invalid ';
+
+                return;
+            }
+            let LastnameRegex=/[a-zA-Z]/;
+            if(lname.trim()==''||! LastnameRegex.test(lname)){
+                lnameError.innerText="mbiemri invalid";
+            return;
+            }
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(Email.trim()==""||!emailRegex.test(Email)){
+                EmailError.innerText="email jo korrekt";
+                return ;
+            }
+            
+            if(subject.trim()==""){
+                subjectError.innerText="subject eshte zbrazet";
+                return;
+            }
+        }
+          </script>
      </main>
      <footer>
         <div class="f">
