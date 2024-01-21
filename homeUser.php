@@ -32,7 +32,7 @@ if(!isset($_SESSION['user_name'])){
         <!-- <a href="logout.php" class="btn">LOG OUT</a> -->
 
             <a href="login_form.php" >LOG IN</a>
-            <a href="home.php" id="active">HOME</a>
+            <a href="homeUser.php" id="active">HOME</a>
             <a href="about.php">ABOUT</a>
             <a href="order.php">ORDER</a>
             <a href="contact.php">CONTACT</a>
@@ -46,7 +46,7 @@ if(!isset($_SESSION['user_name'])){
               
                   
       </div>
-      <h1>welcome User<span><?php echo $_SESSION['user_name'] ?></span></h1>
+      <h1 class="welcome" style="text-align:center;font-size:13px;">Welcome user : <span><?php echo $_SESSION['user_name'] ?></span></h1>
 
       <div class="Sherbimet">
           <h1>BASHKEPUNIMI ME NE OFRON:</h1>
@@ -64,38 +64,38 @@ if(!isset($_SESSION['user_name'])){
               <div class="rubrika">
               <img src="images/blue-taxi2.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="blue-button">REZERVO BLUE TAXI</button>
+                  <button onclick="location.href='order.php'" type="button" class="blue-button">REZERVO BLUE TAXI</button>
               </div>
           </div>
           <div class="rubrika"> 
               <img src="images/e-taxi-tesla.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="tesla-button">REZERVO E-TAXI TESLA</button>
+                  <button onclick="location.href='order.php'" type="button" class="tesla-button">REZERVO E-TAXI TESLA</button>
               </div>
           </div>
           <div class="rubrika">
               <img src="images/online-taxi.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="online-button">REZERVO ONLINE TAXI</button>
+                  <button onclick="location.href='order.php'" type="button" class="online-button">REZERVO ONLINE TAXI</button>
               </div>
           </div>
           <div class="rubrika">
               <img src="images/Pink-taxi2.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="pink-button">REZERVO PINK TAXI</button>
+                  <button onclick="location.href='order.php'" type="button" class="pink-button">REZERVO PINK TAXI</button>
               </div>
           </div>
           <div class="rubrika">
               <img src="images/golden-taxi2.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="golden-button">REZERVO GOLDEN TAXI</button>
+                  <button onclick="location.href='order.php'" type="button" class="golden-button">REZERVO GOLDEN TAXI</button>
               </div>
           </div>
 
           <div class="rubrika">
               <img src="images/urban-taxi.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="urban-button">REZERVO URBAN TAXI</button>
+                  <button onclick="location.href='order.php'" type="button" class="urban-button">REZERVO URBAN TAXI</button>
               </div>
           </div>
   </div>

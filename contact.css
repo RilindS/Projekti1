@@ -14,6 +14,9 @@ body{
     background-color: rgb(16, 80, 86);
     text-align: center;
 }
+#active{
+  color: orangered;
+}
 
 input[type=text], textarea {
     width: 100%;

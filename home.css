@@ -60,13 +60,6 @@ span{
     text-align: center;
 }
 
-@media all and (max-width: 900px) {
-    body {
-      background-color: white;
-      color: black;
-    }
-  }
-
 .rubrika {
     display: flex;
     flex-direction: column;
@@ -196,12 +189,54 @@ li{
     font-size: 25px;
 }
 
-#active a:hover{
-    color: aquamarine;
-    font-size: 16px;
+#active{
+    color: orangered;
 }
 
 .footer{
     display: flex;
 }
+
+@media screen and (max-width: 768px) {
+    .logoAndCatalog img {
+        width: 50%;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bg-photo {
+        padding: 20px;
+    }
+
+    #h1-bgphoto {
+        font-size: 1.5em;
+    }
+
+    .Sherbimet {
+        padding: 10px;
+    }
+
+    .box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .border-box {
+        flex: 1;
+    }
+
+    .photos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rubrika {
+        flex: 0 0 100%;
+    }
+}
+
+
 

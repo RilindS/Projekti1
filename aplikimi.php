@@ -15,16 +15,15 @@
             <img src="images/taxi-logo.png" alt="logo" width="20%">
         </div>
         <div class="links">
-            <a href="home.php" id="active">HOME</a>
+            <a href="login_form.php" >LOG IN</a>
+            <a href="home.php" >HOME</a>
             <a href="about.php">ABOUT</a>
             <a href="order.php">ORDER</a>
             <a href="contact.php">CONTACT</a>
-            <a href="aplikimi.php">APLIKO PER PUNE</a>
+            <a href="aplikimi.php" id="active">APLIKO PER PUNE</a>
         </div>
      </header>
-    <div class="bgphoto">
-        <h2 id="h2-background">APLIKO PER PUNE</h2>
-    </div>
+    
 
     <main>
         <div class="Aplikimi">

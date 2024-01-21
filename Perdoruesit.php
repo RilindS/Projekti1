@@ -1,9 +1,9 @@
 <?php
-include "register_form.php";
-include "login_form.php";
+// include "register_form.php";
+// include "login_form.php";
 class Perdoruesit{
 
-  private  $id;
+  private $id;
   private $emri;
   private $email;
   private $password;

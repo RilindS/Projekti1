@@ -8,12 +8,19 @@
 }
 img{
     justify-items: flex-start;
+    margin: 0;
 }
 
 .links{
     display: flex;
+    font-family: Karla, sans-serif;
+    font-weight: lighter;
     text-decoration: none;
     padding-right: 5px;
+}
+
+#active{
+    color: orangered;
 }
 
 a{

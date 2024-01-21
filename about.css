@@ -8,7 +8,7 @@ body{
 }
 
 #h1-about{
-    font-size: 35px;
+    font-size: 38px;
     margin: 0;
     width: 100%;
     padding: 40px;
@@ -23,6 +23,9 @@ body{
     flex-wrap: nowrap;
     justify-content: space-evenly;
     width: 100%
+}
+#active{
+    color: orangered;
 }
 
 .paragrafi{

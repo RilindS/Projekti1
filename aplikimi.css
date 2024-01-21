@@ -5,13 +5,6 @@ body{
     margin: 0;
     width: 100%;
 }
-.bgphoto{
-    background-image: url(images/application.png);
-    background-position: center;
-    background-size: cover;
-    justify-content: space-evenly;
-    height:350px;
-}
 
 #h2-background{
     padding: 150px;
@@ -19,8 +12,8 @@ body{
     text-align: center;
 }
 
-.Aplikimi{
-    margin-top: 20px;   
+.Aplikimi{   
+    margin: 0;
     justify-content: center;
     text-align: center;
     width: 100%;
@@ -29,7 +22,6 @@ body{
     color: whitesmoke;
     border-radius: 6px;
     padding:10px;
-    margin-bottom: 20px;
 }
 #open-positions{
     width: 30%;
@@ -81,10 +73,10 @@ input{
 }
 
   .porosia-butoni{
-    display: block;
+    display: flex;
     margin-left: 45%;
     margin-top:10px;
-    background-color: darkblue;
+    background-color: orangered;
     font-size: 16px;
     font-weight: bolder;
     padding: 10px;
@@ -92,3 +84,71 @@ input{
     color: whitesmoke;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 600px) {
+    .headerContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logoAndCatalog {
+        margin-bottom: 20px;
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+    .bgphoto {
+        height: 150px; /* Adjust height as needed */
+    }
+
+    .Aplikimi {
+        padding: 20px;
+    }
+
+    .Aplikimi h1 {
+        font-size: 1.5em;
+    }
+
+    #open-positions,
+    #emri,
+    #mbiemri,
+    #email,
+    #nenshtetesia,
+    #datalindjes,
+    #qytetet,
+    #address {
+        width: 100%;
+    }
+
+    .error-message {
+        font-size: 14px;
+    }
+
+    .field {
+        text-align: center;
+    }
+
+    .porosia-butoni {
+        width: 100%;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    .f {
+        flex-direction: column;
+    }
+
+    .footermain {
+        flex-direction: column;
+    }
+
+    .footerleft,
+    .footercenter,
+    .footerright {
+        text-align: center;
+    }
+}
