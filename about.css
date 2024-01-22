@@ -36,39 +36,84 @@ body{
     flex-direction: column;
 }
 
-/* .border-box{ 
-    padding: 30px;
-    background-color: orangered;
-    color: black;
-    margin-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 6px;
-    height: 60px;
-}*/
+body{
+    padding: 0;
+    margin: 0;
+    background-color: floralwhite;
+}
 
-/* .icons{ 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 50px;
-    height: 50px;
-    padding-left: 50px ;
-    margin-bottom: 5px;
-    text-align: center;
-}*/
-/* .box{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 10px;
-    font-size: 20px;
-    list-style-type: none;
-}*/
-/* .border-box:hover{ 
-    background-color: orange;
-    color: whitesmoke;
-    transform: scale(1.03);
-    transition: all 0.7s ease;
-}*/
+h1{
+    margin-top: 50px;
+    margin-left: 510px;
+    font-size: 60px;
+    
+}
+
+.slider-frame{
+    overflow: hidden;
+    justify-content: center;    
+    height: 400px;
+    width: 500px;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+#img{
+    width: 400px;
+    height: 400px;
+}
+
+/*---------- SLIDER --------------*/
+
+
+@keyframes slide_animation{
+    0% {left:0px;}
+    10% {left:0px;}
+    20% {left:1200px;}
+    30% {left:1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px;}
+    80% {left: 0px;}
+    90% {left: 0px;}
+    100% {left:0px;}
+}
+
+@-webkit-keyframes slide_animation{
+    0% {left:0px;}
+    10% {left:0px;}
+    20% {left:1200px;}
+    30% {left:1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px;}
+    80% {left: 0px;}
+    90% {left: 0px;}
+    100% {left:0px;}
+}
+
+.slide-images{
+    width: 3600px;
+    height: 800px;
+    margin: 0 0 0 -2400px;
+    position: relative;
+    -webkit-animation-name: slide_animation;
+    animation-name: slide_animation;
+    -webkit-animation-duration: 20s;
+    animation-duration: 20s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+
+.img-container{
+    height: 800px;
+    width: 1200px;
+    position: relative;
+    float: left;
+}
