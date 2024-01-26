@@ -66,8 +66,13 @@ if (isset($_POST['submit'])) {
    
 <div class="form-container">
 
+<<<<<<< HEAD
    <form  id="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
       <h3>register now</h3>
+=======
+   <form  id="form" action="" method="post" onsubmit="return validateForm()">
+      <h3>CREATE ACCOUNT</h3>
+>>>>>>> df2a0e106d4fb9444de6fcbe5d20a18340137904
       <?php
       if(isset($error)){
          foreach($error as $error){
@@ -75,24 +80,28 @@ if (isset($_POST['submit'])) {
          };
       };
       ?>
-      <input type="text" id="name" name="name"  placeholder="enter your name">
+      <input type="text" id="name" name="name"  placeholder="Shkruaj emrin">
       <div class="error-message" id="nameError"></div>
 
-      <input type="email" id="email" name="email"  placeholder="enter your email">
+      <input type="email" id="email" name="email"  placeholder="Shkruaj email">
       <div class="error-message" id="emailError"></div>
 
-      <input type="password" id="password" name="password"  placeholder="enter your password">
+      <input type="password" id="password" name="password"  placeholder="Shkruaj password-in">
       <div class="error-message" id="passwordError"></div>
 
-      <input type="password" id="cpassword"name="cpassword"  placeholder="confirm your password">
+      <input type="password" id="cpassword"name="cpassword"  placeholder="Konfirmo password-in">
       <div class="error-message" id="cpasswordError"></div>
 
       <select name="user_type">
          <option value="user">user</option>
+<<<<<<< HEAD
        <option value="admin">admin</option> 
+=======
+         <option value="admin">admin</option>
+>>>>>>> df2a0e106d4fb9444de6fcbe5d20a18340137904
       </select>
-      <input type="submit" name="submit" value="register now" class="form-btn"  >
-      <p>already have an account? <a href="login_form.php">login now</a></p>
+      <input type="submit" name="submit" value="register" class="form-btn"  >
+      <p>Already have an account? <a href="login_form.php">Login</a></p>
    </form>
 
 </div>
@@ -119,20 +128,20 @@ if (isset($_POST['submit'])) {
 
             let regxname= /[a-zA-Z]/ ;
             if(name.trim()=='' || !regxname.test(name)){
-                nameError.innerText='invalid emri';
+                nameError.innerText='Emri eshte invalid';
                 return false;
             }
             let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if(email.trim()==""||!emailRegex.test(email)){
-                emailError.innerText="email invalid";
+                emailError.innerText="Email eshte invalid";
                 return false;
             }
             if(password.trim()==""){
-                passwordError.innerText='Password is empty';
+                passwordError.innerText='Shkruani passwordin';
                 return false;
             }
             if(cpassword!==password){
-                cpasswordError.innerText='password not the same';
+                cpasswordError.innerText='Password-i nuk perputhet';
                 return false;
             }
             return true;

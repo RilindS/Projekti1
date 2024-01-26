@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
       }
      
    }else{
-      $error[] = 'incorrect email or password!';
+      $error[] = 'Email-i ose password-i jane gabim!';
    }
 
 };
@@ -55,7 +55,7 @@ if(isset($_POST['submit'])){
 <div class="form-container">
 
    <form id="form" action="" method="post" onsubmit="return validateForm()">
-      <h3>login now</h3>
+      <h3>LOGIN</h3>
       <?php
       if(isset($error)){
          foreach($error as $error){
@@ -63,15 +63,15 @@ if(isset($_POST['submit'])){
          };
       };
       ?>
-      <input type="email" name="email"  id="email" placeholder="enter your email">
+      <input type="email" name="email"  id="email" placeholder="Shkruaj email-in">
       <div class="error-message" id="emailError"></div>
 
-      <input type="password" name="password" id="password"  placeholder="enter your password">
+      <input type="password" name="password" id="password"  placeholder="Shkruaj password-in">
       <div class="error-message" id="passwordError"></div>
 
       <!-- <button  name="submit"  class="form-btn" type="button" onclick="validateForm()">register</button> -->
-       <input type="submit" name="submit" value="login now" class="form-btn" > 
-      <p>don't have an account? <a href="register_form.php">register now</a></p>
+       <input type="submit" name="submit" value="kycu" class="form-btn" > 
+      <p>Don't have an account? <a href="register_form.php">Create account</a></p>
    </form>
 
 </div>
@@ -88,11 +88,11 @@ if(isset($_POST['submit'])){
 
         let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if(email.trim()==""||!emailRegex.test(email)){
-                emailError.innerText="email invalid";
+                emailError.innerText="Email-i eshte invalid";
                 return false;
             }
             if(password.trim()==""){
-                passwordError.innerText='Password is empty';
+                passwordError.innerText='Password-i eshte i zbrazet';
                 return false;
             }
             return true;

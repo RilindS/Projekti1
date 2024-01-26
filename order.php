@@ -45,9 +45,13 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="links">
             <a href="login_form.php" >LOG IN</a>
+<<<<<<< HEAD
             <a href="home.php" id="active">HOME</a>
+=======
+            <a href="home.php" >HOME</a>
+>>>>>>> df2a0e106d4fb9444de6fcbe5d20a18340137904
             <a href="about.php">ABOUT</a>
-            <a href="order.php">ORDER</a>
+            <a href="order.php" id="active">ORDER</a>
             <a href="contact.php">CONTACT</a>
             <a href="aplikimi.php">APLIKO PER PUNE</a>
             
@@ -60,7 +64,43 @@ if (isset($_POST['submit'])) {
      </div>
 
      <main>
-        
+     <div class="rezervimi">
+                <h1>REZERVO UDHETIMIN TEND</h1>
+            <form id="myForm" action="rezervimi_databaz.php" method="post">
+          
+                <div class="input-field">
+                    <p>Emri dhe Mbiemri</p>
+                    <input id="NameAndLastName" name="name"type="text" placeholder="Emri dhe Mbiemri juaj">
+                </div>
+                <div class="error-message" id="NameAndLastNameError" ></div>
+
+                <div class="input-field">
+                    <p>Email</p>
+                    <input id="email" type="email"  name="email"placeholder="Shkruaj email adresen tuaj:">
+                </div>
+                <div class="error-message" id="emailError"></div>
+
+                <div class="input-field">
+                    <p>Numri kontaktues</p>
+                    <input id="Nrcontact" type="number" name="Nrcontact" placeholder="Shkruaj numrin e telefonit:">
+                </div>
+                <div class="error-message" id="NrcontactError"></div>
+
+                <div class="input-field">
+                    <p>Shkruaj vendndodhjen tuaj</p>
+                    <input id="location" type="text" name="location" placeholder="Tregoni ku gjendeni:">
+                </div>
+                <div class="error-message" id="locationError"></div>
+                <div class="btn-group">
+                    
+                </div>
+                <button name="submit"class="porosia-butoni" type="submit" onclick="validateForm()">Dergo Porosine</button>
+
+            <div>        
+            <p><small>Pasi te keni permbushur kerkesat e mesiperme, do te pranoni me email detajet e porosise suaj.</small></p>
+        </form> 
+    </div>
+        </div>
         <section class="table-section">
             <h1 class="main-h1">CMIMORJA SIPAS LOKACIONIT DHE DESTINACIONIT</h1>
             <table>
@@ -160,6 +200,7 @@ if (isset($_POST['submit'])) {
                 </tbody>
             </table>
         </section>
+<<<<<<< HEAD
             <div class="rezervimi">
                 <h1>REZERVO UDHETIMIN TEND</h1>
             <form id="myForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
@@ -195,15 +236,26 @@ if (isset($_POST['submit'])) {
             <p><small>Pasi te keni permbushur kerkesat e mesiperme, do te pranoni me email detajet e porosise suaj.</small></p>
         </div>
         <div id="kontenti">
+=======
+            
+        <!-- <div id="kontenti">
+>>>>>>> df2a0e106d4fb9444de6fcbe5d20a18340137904
             <header>
                 <h2>Shiqo foto te taxive tane</h2>
                 <img id="slideShow"/>
             </header>
+<<<<<<< HEAD
             <!-- <button class ="ndrrimi-fotove" type="button"  onclick="chganeImg()">Next</button> -->
         </div> 
         <button name="submit"class="porosia-butoni" type="submit"value="Submit" onclick= "return validateForm()">Dergo Porosine</button>
    </form> 
  </div>
+=======
+             <button class ="ndrrimi-fotove" type="button"  onclick="chganeImg()">Next</button> 
+        </div>  -->
+   
+ 
+>>>>>>> df2a0e106d4fb9444de6fcbe5d20a18340137904
        
     </main>
      <footer>

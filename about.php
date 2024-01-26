@@ -14,8 +14,9 @@
             <img src="images/taxi-logo.png" alt="logo" width="20%">
         </div>
         <div class="links">
-            <a href="home.php" id="active">HOME</a>
-            <a href="about.php">ABOUT</a>
+            <a href="login_form.php" >LOG IN</a>
+            <a href="home.php" >HOME</a>
+            <a href="about.php" id="active">ABOUT</a>
             <a href="order.php">ORDER</a>
             <a href="contact.php">CONTACT</a>
             <a href="aplikimi.php">APLIKO PER PUNE</a>
@@ -26,11 +27,30 @@
         
         <h1 id="h1-about">ABOUT US</h1>
      <div class="container">
-        
-
         <p class="paragrafi">
             Mirësevini në faqen tonë, një destinacion virtual ku bashkohen shërbimet e transportit më të përshtatshme dhe të besueshme. Ne jemi një kompani taksish e orientuar nga një ekip pasionant i profesionistëve të transportit, të përkushtuar për të ofruar një përvojë të jashtëzakonshme për udhëtarët tanë. Me një flotë të përzgjedhur me kujdes të makinave të reja dhe shoferë me përvojë, ne sigurojmë udhëtime të rehatshme dhe të sigurta për klientët tanë. Përmes teknologjisë moderne, ofrojmë një platformë të lehtë për përdorim për rezervime online, duke garantuar që udhëtimi juaj të jetë i përshtatshëm dhe i organizuar me kujdes. Misja jonë është të sjellim një standard të lartë të shërbimit taksive, duke shërbyer komunitetin lokal dhe duke përgjigjur nevojave të çdo udhëtari me përkushtim dhe kujdes të veçantë. Ju ftojmë të përjetoni një udhëtim të paharrueshëm me ne dhe të bëheni pjesë e familjes së taksive tonë të përkushtuar.</p>
-           
+            <div class="slider-frame">
+            <div class="slide-images">
+                    <div class="img-container">
+                        <img src="images/blue-taxi3.png" id="img">
+                    </div>
+                    <div class="img-container">
+                        <img src="images/e-taxi-tesla.png" id="img">
+                    </div>
+                    <div class="img-container">
+                        <img src="images/online-taxi.png" id="img">
+                    </div>
+                    <div class="img-container">
+                        <img src="images/Pink-taxi2.png" id="img">
+                    </div>
+                    <div class="img-container">
+                        <img src="images/golden-taxi2.png" id="img">
+                    </div>
+                    <div class="img-container">
+                        <img src="images/urban-taxi.png" id="img">
+                    </div>
+            </div>
+        </div>
 </div>
 
      

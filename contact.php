@@ -47,10 +47,11 @@ if(empty($emri) || empty($mbiemri) || empty($email) || empty($ankesa) ){
             <img src="images/taxi-logo.png" alt="logo" width="20%">
         </div>
         <div class="links">
-            <a href="home.php" id="active">HOME</a>
+            <a href="login_form.php" >LOG IN</a>
+            <a href="home.php">HOME</a>
             <a href="about.php">ABOUT</a>
             <a href="order.php">ORDER</a>
-            <a href="contact.php">CONTACT</a>
+            <a href="contact.php" id="active">CONTACT</a>
             <a href="aplikimi.php">APLIKO PER PUNE</a>
         </div>
      </header>

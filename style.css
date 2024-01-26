@@ -69,13 +69,13 @@
    justify-content: center;
    padding:20px;
    padding-bottom: 60px;
-   background: #eee;
+   background:rgba(255, 86, 24, 0.792);
 }
 
 .form-container form{
    padding:20px;
-   border-radius: 5px;
-   box-shadow: 0 5px 10px rgba(0,0,0,.1);
+   border-radius: 10px;
+   /* box-shadow: 0 5px 10px rgba(0,0,0,.1); */
    background: #fff;
    text-align: center;
    width: 500px;
@@ -85,7 +85,7 @@
    font-size: 30px;
    text-transform: uppercase;
    margin-bottom: 10px;
-   color:#333;
+   color:black;
 }
 
 .form-container form input,
@@ -103,30 +103,30 @@
 }
 
 .form-container form .form-btn{
-   background: #fbd0d9;
-   color:crimson;
+   background:  black;
+   color:#fff;
    text-transform: capitalize;
    font-size: 20px;
    cursor: pointer;
 }
 
 .form-container form .form-btn:hover{
-   background: crimson;
+   background:rgb(69, 67, 67);
    color:#fff;
 }
 
 .form-container form p{
    margin-top: 10px;
    font-size: 20px;
-   color:#333;
+   color:black;
 }
 
 .form-container form p a{
-   color:crimson;
+   color:red;
 }
 
 .form-container form .error-msg{
-   margin:10px 0;
+   /* margin:10px 0; */
    display: block;
    background: crimson;
    color:#fff;
@@ -136,11 +136,26 @@
 }
 .error-message{
    color: red;
-   font-size: 20px;
-   margin-top: 20px;
-   margin-bottom: 20px;
+   font-size: 12px;
    justify-content: flex-start;
    text-align: left;
-   padding-left: 20%;
-   
+}
+
+@media all and (max-width: 600px) {
+   .form-container {
+       width: 80%;
+       margin: auto;
+   }
+
+   #form {
+       width: 100%;
+   }
+
+   select {
+       width: 100%;
+   }
+
+   .error-msg {
+       font-size: 14px;
+   }
 }

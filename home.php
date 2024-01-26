@@ -19,8 +19,6 @@
             <img src="images/taxi-logo.png" alt="logo" width="20%">
         </div>
         <div class="links">
-        
-            
             <a href="login_form.php" >LOG IN</a>
             <a href="home.php" id="active">HOME</a>
             <a href="about.php">ABOUT</a>
@@ -54,38 +52,38 @@
               <div class="rubrika">
               <img src="images/blue-taxi2.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="blue-button">REZERVO BLUE TAXI</button>
+              <button onclick="location.href='order.php'" type="button" class="blue-button">REZERVO BLUE TAXI</button>
               </div>
           </div>
           <div class="rubrika"> 
               <img src="images/e-taxi-tesla.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="tesla-button">REZERVO E-TAXI TESLA</button>
+                  <button onclick="location.href='order.php'" type="button" class="tesla-button">REZERVO E-TAXI TESLA</button>
               </div>
           </div>
           <div class="rubrika">
               <img src="images/online-taxi.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="online-button">REZERVO ONLINE TAXI</button>
+                  <button onclick="location.href='order.php'" type="button" class="online-button">REZERVO ONLINE TAXI</button>
               </div>
           </div>
           <div class="rubrika">
               <img src="images/Pink-taxi2.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="pink-button">REZERVO PINK TAXI</button>
+                  <button onclick="location.href='order.php'" type="button" class="pink-button">REZERVO PINK TAXI</button>
               </div>
           </div>
           <div class="rubrika">
               <img src="images/golden-taxi2.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="golden-button">REZERVO GOLDEN TAXI</button>
+                  <button onclick="location.href='order.php'" type="button" class="golden-button">REZERVO GOLDEN TAXI</button>
               </div>
           </div>
 
           <div class="rubrika">
               <img src="images/urban-taxi.png" alt="" class="img" height="500px" width="450px">
               <div class="button">
-                  <button type="button" class="urban-button">REZERVO URBAN TAXI</button>
+                  <button onclick="location.href='order.php'" type="button" class="urban-button">REZERVO URBAN TAXI</button>
               </div>
           </div>
   </div>

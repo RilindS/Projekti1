@@ -161,3 +161,26 @@ select{
     color: whitesmoke;
     cursor: pointer;
   }
+
+  @media all and (max-width: 600px) {
+
+    .logoAndCatalog img {
+        width: 50%; 
+    }
+
+    .links a {
+        font-size: 14px;
+    }
+
+    .backgroundphoto {
+        height: 200px; 
+    }
+
+    .rezervimi {
+        padding: 10px; 
+    }
+
+    .table-section {
+        font-size: 14px;
+    }
+}
