@@ -66,13 +66,13 @@ if (isset($_POST['submit'])) {
    
 <div class="form-container">
 
-<<<<<<< HEAD
+
    <form  id="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
-      <h3>register now</h3>
-=======
+      
+
    <form  id="form" action="" method="post" onsubmit="return validateForm()">
       <h3>CREATE ACCOUNT</h3>
->>>>>>> df2a0e106d4fb9444de6fcbe5d20a18340137904
+
       <?php
       if(isset($error)){
          foreach($error as $error){
@@ -94,11 +94,10 @@ if (isset($_POST['submit'])) {
 
       <select name="user_type">
          <option value="user">user</option>
-<<<<<<< HEAD
-       <option value="admin">admin</option> 
-=======
-         <option value="admin">admin</option>
->>>>>>> df2a0e106d4fb9444de6fcbe5d20a18340137904
+      <!-- <option value="admin">admin</option>  -->
+
+         <!-- <option value="admin">admin</option> -->
+
       </select>
       <input type="submit" name="submit" value="register" class="form-btn"  >
       <p>Already have an account? <a href="login_form.php">Login</a></p>

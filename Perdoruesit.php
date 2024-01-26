@@ -1,10 +1,5 @@
 <?php
-<<<<<<< HEAD
 
-=======
-// include "register_form.php";
-// include "login_form.php";
->>>>>>> df2a0e106d4fb9444de6fcbe5d20a18340137904
 class Perdoruesit{
 
   private $id;

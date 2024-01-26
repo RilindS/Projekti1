@@ -9,18 +9,25 @@ $student = $strep->getAplikimetPunesById($id);
 
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="edit.css"> 
 <body>
-    <h3>Perditso te dhenat qe deshiron per Aplikuesin e Punes</h3>
+    <h3 id="h3">Perditeso te dhenat qe deshiron per Aplikuesin e Punes</h3>
     <form action="" method="post">
      <!-- nese nuk duam t'i ndryshojme te gjitha te dhenat, e perdorim kete pjesen tek value qe te na shfaqen vlerat aktuale, ashtu qe atributet qe nuk duam t'i ndryshojme mbesin te njejta pa pasur nevoje t'i shkruajme prape-->
-        <input type="text" name="emri"  value="<?php echo $student['emri']?>"placeholder="Emri.."> <br> <br> <!-- Pjesa brenda [] eshte emri i sakte i atributit si ne Databaze-->
-        <input type="text" name="mbiemri"  value="<?php echo $student['mbiemri']?>"> <br> <br>
-        <input type="email" name="email"  value="<?php echo $student['email']?>"> <br> <br>
-        <input type="text" name="nenshtetsia"  value="<?php echo $student['nenshtetsia']?>"> <br> <br>
-        <input type="text" name="qyteti"  value="<?php echo $student['qyteti']?>"> <br> <br>
-        <input type="text" name="adresa"  value="<?php echo $student['adresa']?>"> <br> <br>
+     <p>Emri</p>  
+     <input type="text" name="emri"  value="<?php echo $student['emri']?>"placeholder="Emri.."> <br> <br> <!-- Pjesa brenda [] eshte emri i sakte i atributit si ne Databaze-->
+     <p>Mbiemri</p>    
+     <input type="text" name="mbiemri"  value="<?php echo $student['mbiemri']?>"> <br> <br>
+     <p>Email</p>    
+     <input type="email" name="email"  value="<?php echo $student['email']?>"> <br> <br>
+     <p>Nenshtetesia</p>     
+     <input type="text" name="nenshtetsia"  value="<?php echo $student['nenshtetsia']?>"> <br> <br>
+     <p>Qyteti</p>     
+     <input type="text" name="qyteti"  value="<?php echo $student['qyteti']?>"> <br> <br>
+     <p>Adresa</p>     
+     <input type="text" name="adresa"  value="<?php echo $student['adresa']?>"> <br> <br>
     
-        <input type="submit" name="submit" value="RUAJ"> <br> <br>
+        <input type="submit" name="submit" value="SAVE"> <br> <br>
     </form>
 </body>
 </html>

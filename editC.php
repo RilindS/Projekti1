@@ -9,16 +9,22 @@ $kontakt = $strep->getKontaktById($id);
 
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="edit.css"> 
+
 <body>
-    <h3>Perditso te dhenat e kontaktit</h3>
+    <h3 id="h3">Perditeso te dhenat e kontaktit</h3>
     <form action="" method="post">
      <!-- nese nuk duam t'i ndryshojme te gjitha te dhenat, e perdorim kete pjesen tek value qe te na shfaqen vlerat aktuale, ashtu qe atributet qe nuk duam t'i ndryshojme mbesin te njejta pa pasur nevoje t'i shkruajme prape-->
-        <input type="text" name="fname"  value="<?php echo $kontakt['fname']?>"> <br> <br> <!-- Pjesa brenda [] eshte emri i sakte i atributit si ne Databaze-->
-        <input type="text" name="lname"  value="<?php echo $kontakt['lname']?>"> <br> <br>
-        <input type="text" name="email"  value="<?php echo $kontakt['email']?>"> <br> <br>
-        <input type="text" name="subject"  value="<?php echo $kontakt['subject']?>"> <br> <br>
+     <p>Emri</p>   
+     <input type="text" name="fname"  value="<?php echo $kontakt['fname']?>"> <br> <br> <!-- Pjesa brenda [] eshte emri i sakte i atributit si ne Databaze-->
+     <p>Mbiemri</p>   
+     <input type="text" name="lname"  value="<?php echo $kontakt['lname']?>"> <br> <br>
+     <p>Email</p>   
+     <input type="text" name="email"  value="<?php echo $kontakt['email']?>"> <br> <br>
+     <p>Ankesa</p>   
+     <input type="text" name="subject"  value="<?php echo $kontakt['subject']?>"> <br> <br>
 
-        <input type="submit" name="buton" value="save"> <br> <br>
+        <input type="submit" name="buton" value="SAVE"> <br> <br>
     </form>
 </body>
 </html>

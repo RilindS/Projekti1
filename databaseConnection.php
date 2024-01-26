@@ -1,25 +1,29 @@
 <?php
+class DatabaseConnection{
+    //keto te dhena i merrni ne baze te databazes suaj
+    private $host = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $db = "user_db";
 
-class DatabaseConenction{
-    private $server="localhost";
-    private $username="root";
-    private $password="";
-    private $database = "user_db";
+    
+function startConnection(){
+    try{
+        $conn = new PDO("mysql:host=$this->host;dbname=$this->db", $this->username, $this->password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
-    function startConnection(){
-
-        try{
-            $conn = new PDO("mysql:host=$this->server;dbname=$this->database",$this->username,$this->password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $conn;
-        }catch(PDOException $e){
-            echo "Database Conenction Failed".$e->getMessage();
+        if(!$conn){
+            //echo "Connection failed "; per testim
             return null;
+        }else{
+            //echo "Connection successful!"; per testim
+            return $conn;
         }
-
-
+        
+    }catch(PDOException $e){
+        echo "Connection failed ". $e->getMessage();
+        return null;
     }
 }
-
+}
 ?>
