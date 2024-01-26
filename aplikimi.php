@@ -1,3 +1,31 @@
+<?php
+include_once 'aplikimetpunes.php';
+include_once 'aplikimetRepository.php';
+
+if (isset($_POST['submit'])) {
+    
+    $emri = $_POST['emri'];
+    $mbiemri = $_POST['mbiemri'];
+    $email = $_POST['email'];
+    $nenshtetesia = $_POST['nenshtetesia'];
+    $qyteti = $_POST['qyteti'];
+    $adresa = $_POST['address'];
+
+    $errors = array();
+    if(empty($emri) || empty($mbiemri) || empty($email) || empty($nenshtetesia)|| empty($qyteti) || empty($adresa)){
+        $errors[] = "All fields are required!";
+    }else{
+    $Aplikimetpunes = new aplikimetpunes($emri, $mbiemri, $email,$nenshtetesia, $qyteti, $adresa);
+
+    $AplikimetRepository = new aplikimetRepository();
+    $AplikimetRepository->insertAplikimet($Aplikimetpunes);
+    header("location:home.php");
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +49,7 @@
             <a href="contact.php">CONTACT</a>
             <a href="aplikimi.php">APLIKO PER PUNE</a>
         </div>
+
      </header>
     <div class="bgphoto">
         <h2 id="h2-background">APLIKO PER PUNE</h2>
@@ -37,7 +66,7 @@
                         <option value="Bazist">Bazist/e</option>
                         <option value="Autolarje">Autolarje</option>
             </select>
-            <form  action="aplikimet_databaz.php" method="post">
+            <form  action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
                 <div class="input-field">
                     <p>Emri</p>
                     <input id="emri" name="emri" type="text" placeholder="Emri juaj">
@@ -69,8 +98,8 @@
                 <div class="error-message" id="datalindjesError"></div>
 
                  <div class="input-field">
-                    <p>Qyteti</p>
-                    <select id="qytetet" name="qytetet">
+                    <p>Qyteti</p>       
+                    <select id="qytetet" name="qyteti">
                         <option value="" disabled selected>Zgjidh një qytet</option>
                         <option value="Prishtine">Prishtine</option>
                         <option value="Peje">Peje</option>
@@ -94,7 +123,7 @@
                
                 
                 <div class ="field button-field">
-                    <button name="submit" class="porosia-butoni" type="submit" onclick="validateForm()">Dergo Aplikimin</button>
+                    <button name="submit" class="porosia-butoni" type="submit" onclick=" return validateForm()">Dergo Aplikimin</button>
                 </div>
                 
 
@@ -130,6 +159,9 @@
             let address=document.getElementById('address').value;
             let addressError=document.getElementById('addressError');
 
+            let allFieldsError = document.getElementById('allFieldsError');
+
+            let hasErrors = false; 
             
             emriError.innerText='';
             mbiemriError.innerText='';
@@ -139,41 +171,51 @@
             addressError.innerText='';
             qytetiError.innerText='';
 
+            allFieldsError.innerText = '';
+
+
             let regxname= /[a-zA-Z]/ ;
 
             if(emri.trim()=='' || !regxname.test(emri)){
                 emriError.innerText='invalid emri';
+        hasErrors = true;
 
-                return;
+                return false;
             }
             let LastnameRegex=/[a-zA-Z]/;
             if(mbiemri.trim()==''||! LastnameRegex.test(mbiemri)){
                 mbiemriError.innerText="mbiemri invalid";
-            return;
+                hasErrors = true;
+                return false;            
             }
             let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if(email.trim()==""||!emailRegex.test(email)){
                 emailError.innerText="email invalid";
-                return ;
-            }
+                hasErrors = true;
+                return false;        
+                }
             let NenshtetesiaRegex= /[a-zA-Z]/ ;
             if(nenshtetesia.trim()==""|| !NenshtetesiaRegex.test(nenshtetesia)){
                 nenshtetsiaError.innerText="nenshtetsia invalid";
-                return;
-            }
+                hasErrors = true;
+                return false;         
+               }
             if(datalindjes.trim()==""){
                 datalindjesError.innerText="dataLindjes invalid";
-                return;
-            }
+                hasErrors = true;
+                return false;        
+                }
             if(qytetet.trim()==''){
                 qytetiError.innerText='qyteti invalid';
-                return;
-            }
+                hasErrors = true;
+                return false;          
+              }
             if(address.trim()==""){
                 addressError.innerText="adresa invalid";
-                return;
-            }
-
+                hasErrors = true;
+                return false;
+                        }
+           return true;             
         }
     </script>
     <footer>

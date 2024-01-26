@@ -32,7 +32,7 @@ if(!isset($_SESSION['admin_name'])){
              <a href="home.php" class="btn">LOG OUT</a> 
              <!-- <a href="login_form.php" >LOG IN</a>  -->
             <a href="homeAdmin.php" id="active">HOME</a>
-            <!-- <a href="about.php">ABOUT</a>  -->
+             <a href="about.php">ABOUT</a>  
             <!-- <a href="order.php">ORDER</a> -->
             <!-- <a href="contact.php">CONTACT</a> -->
             <!-- <a href="aplikimi.php">APLIKO PER PUNE</a> -->

@@ -1,3 +1,32 @@
+<?php
+include_once 'Rezervimi.php';
+include_once 'RezervimiRepository.php';
+
+if (isset($_POST['submit'])) {
+    $emri = $_POST['name'];
+    $email = $_POST['email'];
+    $nrkontaktues = $_POST['Nrcontact'];
+    $vendndodhja = $_POST['location'];
+
+    $errors = array();
+
+    if(empty($emri) || empty($email) || empty($nrkontaktues) || empty($vendndodhja)){
+            $errors[] = "All fields are required!";
+        }else{
+    $Rezervim = new Rezervimi($emri, $email, $nrkontaktues,$vendndodhja);
+    $rezervimiRepository = new RezervimiRepository();
+    $rezervimiRepository->insertRezervimet($Rezervim);
+    header("location:order.php");
+}
+}
+?>
+<?php if (!empty($errors)) { ?>
+    <div class="error-message" id="allFieldsError">
+        <?php foreach ($errors as $error) {
+            echo $error . "<br>";
+        } ?>
+    </div>
+<?php } ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +44,7 @@
             <img src="images/taxi-logo.png" alt="logo" width="20%">
         </div>
         <div class="links">
-            <a href="Register-LogIn.php" >LOG IN</a>
+            <a href="login_form.php" >LOG IN</a>
             <a href="home.php" id="active">HOME</a>
             <a href="about.php">ABOUT</a>
             <a href="order.php">ORDER</a>
@@ -133,7 +162,7 @@
         </section>
             <div class="rezervimi">
                 <h1>REZERVO UDHETIMIN TEND</h1>
-            <form id="myForm" action="rezervimi_databaz.php" method="post">
+            <form id="myForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
           
                 <div class="input-field">
                     <p>Emri dhe Mbiemri</p>
@@ -172,7 +201,7 @@
             </header>
             <!-- <button class ="ndrrimi-fotove" type="button"  onclick="chganeImg()">Next</button> -->
         </div> 
-        <button name="submit"class="porosia-butoni" type="submit" onclick="validateForm()">Dergo Porosine</button>
+        <button name="submit"class="porosia-butoni" type="submit"value="Submit" onclick= "return validateForm()">Dergo Porosine</button>
    </form> 
  </div>
        
@@ -236,11 +265,15 @@
 
     let location = document.getElementById('location').value;
     let locationError = document.getElementById('locationError');
+    let allFieldsError = document.getElementById('allFieldsError');
+
+    let hasErrors = false; 
 
     NameAndLastNameError.innerText = '';
     emailError.innerText = '';
     NrcontactError.innerText = '';
     locationError.innerText = '';
+    allFieldsError.innerText = '';
 
     let regxNameAndLastName = /[a-zA-Z]/;
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -248,24 +281,39 @@
     let NrcontactRegex =  /[0-9]/;
     let locationRegex = /[a-zA-Z]/;
 
-    if (NameAndLastName.trim() === "" || !regxNameAndLastName.test(NameAndLastName)) {
+    if ( !regxNameAndLastName.test(NameAndLastName)) {
         NameAndLastNameError.innerText = 'invalid name and LastName';
-        return;
+        hasErrors = true;
+        return false;
     }
 
     if (!emailRegex.test(email)) {
         emailError.innerText = 'invalid email';
-        return;
+        hasErrors = true;
+        return false;
     }
 
     if (!NrcontactRegex.test(Nrcontact)) {
         NrcontactError.innerText = 'Invalid nrContact';
-        return;
+        hasErrors = true;
+        return false;
     }
 
     if (!locationRegex.test(location)) {
         locationError.innerText = 'invalid location';
+        hasErrors = true;
+        return false;
     }
+    
+    if (NameAndLastName.trim() === "" || email.trim() === "" || Nrcontact.trim() === "" || location.trim() === "") {
+        hasErrors = true;
+        return false;
+    }
+    if (hasErrors) {
+        document.getElementById('allFieldsError').innerText = 'All fields are required!';
+        return false;
+    }
+    return true;
 
 }   
        </script>

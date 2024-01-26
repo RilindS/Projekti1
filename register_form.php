@@ -33,7 +33,24 @@ if(isset($_POST['submit'])){
 
 
 ?>
+<?php
+include_once 'Perdoruesit.php';
+include_once 'PerdoruesitRepository.php';
 
+if (isset($_POST['submit'])) {
+    $emri = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $user_type = $_POST['user_type'];
+  
+
+    $Perdorues = new Perdoruesit($emri,$email,$password, $user_type);
+
+    $perdoruesitRepository = new PerdoruesitRepository();
+    $perdoruesitRepository->insertPerdoruesit($Perdorues);
+    header("location:dashbard.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +66,7 @@ if(isset($_POST['submit'])){
    
 <div class="form-container">
 
-   <form  id="form" action="" method="post" onsubmit="return validateForm()">
+   <form  id="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
       <h3>register now</h3>
       <?php
       if(isset($error)){
@@ -72,7 +89,7 @@ if(isset($_POST['submit'])){
 
       <select name="user_type">
          <option value="user">user</option>
-         <!-- <option value="admin">admin</option> -->
+       <option value="admin">admin</option> 
       </select>
       <input type="submit" name="submit" value="register now" class="form-btn"  >
       <p>already have an account? <a href="login_form.php">login now</a></p>

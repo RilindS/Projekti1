@@ -1,4 +1,34 @@
+<?php
+include_once 'Contacti.php';
+include_once 'ContactRepository.php';
+$errors = array();
+if (isset($_POST['submit'])) {
+    $emri = $_POST['firstname'];    
+    $mbiemri = $_POST['lastname'];
+    $email = $_POST['email'];
+    $ankesa = $_POST['subject'];
 
+  
+if(empty($emri) || empty($mbiemri) || empty($email) || empty($ankesa) ){
+            $errors[] = "All fields are required!";
+
+}else{
+
+    $kontakti = new Contacti($emri, $mbiemri, $email,$ankesa);
+
+    $contactRepository = new ContactRepository();
+    $contactRepository->insertKontakti($kontakti);
+    header("location:contact.php");
+}
+}
+?>
+<?php if (!empty($errors)) { ?>
+        <div class="error-message" id="allFieldsError">
+            <?php foreach ($errors as $error) {
+                echo $error . "<br>";
+            } ?>
+        </div>
+    <?php } ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +41,7 @@
     <title>CONTACT US</title>
 </head>
 <body>
+
     <header class="headerContainer">
         <div class="logo">
             <img src="images/taxi-logo.png" alt="logo" width="20%">
@@ -30,7 +61,7 @@
             <h1 id="h1-main">CONTACT US</h1>
         </div>
         <div class="container">
-            <form action="Kontaki_databaz.php" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
           
               <label for="fname">Emri</label>
               <input type="text" id="fname" name="firstname" placeholder="Emri juaj..">
@@ -49,7 +80,7 @@
               <div class="error-message" id="subjectError"></div>
 
             <div >
-            <button name="submit" class="porosia-butoni" type="submit" onclick="validateForm()">Submit</button>
+            <button name="submit" class="porosia-butoni" type="submit" onclick="return validateForm()">Submit</button>
 
             </div>
           
@@ -69,35 +100,55 @@
 
             let subject=document.getElementById('subject').value;
             let subjectError=document.getElementById('subjectError');
-         
+            let allFieldsError = document.getElementById('allFieldsError');
+
+            let hasErrors = false; 
+
+
             fnameError.innerText='';
             lnameError.innerText='';
             EmailError.innerText='';
             subjectError.innerText='';  
+            allFieldsError.innerText = '';
+
         
             let regxname= /[a-zA-Z]/ ;
 
-            if(fname.trim()=='' || !regxname.test(fname)){
+            if( !regxname.test(fname)){
                 fnameError.innerText='emri invalid ';
+                hasErrors = true;
 
-                return;
+                return false;
             }
             let LastnameRegex=/[a-zA-Z]/;
-            if(lname.trim()==''||! LastnameRegex.test(lname)){
+            if(! LastnameRegex.test(lname)){
                 lnameError.innerText="mbiemri invalid";
-            return;
+                hasErrors = true;
+
+            return false;
             }
             let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if(Email.trim()==""||!emailRegex.test(Email)){
+            if(!emailRegex.test(Email)){
                 EmailError.innerText="email jo korrekt";
-                return ;
+                hasErrors = true;
+
+                return false ;
             }
-            
-            if(subject.trim()==""){
-                subjectError.innerText="subject eshte zbrazet";
-                return;
+            if (hasErrors) {
+            allFieldsError.innerText = 'All fields are required ';
+            return false;
+        } else {
+            // Kontrolli nëse forma është dorëzuar duke shtypur butonin "Submit"
+            if (document.getElementById('submit').clicked) {
+                return true;
+            } else {
+                return false;
             }
         }
+      
+
+         
+    }
           </script>
      </main>
      <footer>
