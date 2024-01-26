@@ -68,7 +68,10 @@ if (isset($_POST['submit'])) {
 
 
    <form  id="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
+<<<<<<< HEAD
+=======
       
+>>>>>>> f731e770cdbd9a1abc6f5c1773ab7653d29df12f
 
    <form  id="form" action="" method="post" onsubmit="return validateForm()">
       <h3>CREATE ACCOUNT</h3>
@@ -94,9 +97,16 @@ if (isset($_POST['submit'])) {
 
       <select name="user_type">
          <option value="user">user</option>
+<<<<<<< HEAD
+
+       <option value="admin">admin</option> 
+
+           <!-- <option value="admin">admin</option> -->
+=======
       <!-- <option value="admin">admin</option>  -->
 
          <!-- <option value="admin">admin</option> -->
+>>>>>>> f731e770cdbd9a1abc6f5c1773ab7653d29df12f
 
       </select>
       <input type="submit" name="submit" value="register" class="form-btn"  >
