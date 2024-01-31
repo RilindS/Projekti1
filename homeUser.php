@@ -30,8 +30,7 @@ if(!isset($_SESSION['user_name'])){
         </div>
         <div class="links">
         <!-- <a href="logout.php" class="btn">LOG OUT</a> -->
-
-            <a href="login_form.php" >LOG IN</a>
+             <a href="home.php" class="btn">LOG OUT</a>
             <a href="homeUser.php" id="active">HOME</a>
             <a href="about.php">ABOUT</a>
             <a href="order.php">ORDER</a>

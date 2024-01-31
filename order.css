@@ -153,7 +153,7 @@ select{
     display: block;
     margin-left: 40%;
     margin-top:10px;
-    background-color: orangered;
+    background-color: rgb(64, 0, 255);
     font-size: 14px;
     font-weight: bolder;
     padding: 10px;

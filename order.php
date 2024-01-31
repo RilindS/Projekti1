@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
      <main>
      <div class="rezervimi">
                 <h1>REZERVO UDHETIMIN TEND</h1>
-            <form id="myForm" action="rezervimi_databaz.php" method="post">
+            <form id="myForm"  method="post">
           
                 <div class="input-field">
                     <p>Emri dhe Mbiemri</p>
@@ -90,7 +90,7 @@ if (isset($_POST['submit'])) {
                 <div class="btn-group">
                     
                 </div>
-                <button name="submit"class="porosia-butoni" type="submit" onclick="validateForm()">Dergo Porosine</button>
+                <button name="submit"class="porosia-butoni" type="submit" onclick="return validateForm()">Dergo Porosine</button>
 
             <div>        
             <p><small>Pasi te keni permbushur kerkesat e mesiperme, do te pranoni me email detajet e porosise suaj.</small></p>
@@ -302,7 +302,7 @@ if (isset($_POST['submit'])) {
         return false;
     }
     if (hasErrors) {
-        document.getElementById('allFieldsError').innerText = 'All fields are required!';
+        document.getElementById('allFieldsError').innerText = 'Te gjitha hapsirat duhet te jene te mbushura ';
         return false;
     }
     return true;

@@ -67,11 +67,6 @@ if (isset($_POST['submit'])) {
 <div class="form-container">
 
 
-   <form  id="form" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
-<<<<<<< HEAD
-=======
-      
->>>>>>> f731e770cdbd9a1abc6f5c1773ab7653d29df12f
 
    <form  id="form" action="" method="post" onsubmit="return validateForm()">
       <h3>CREATE ACCOUNT</h3>
