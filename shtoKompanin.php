@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>Image Upload Using PHP</title>
 	<style>
 		body {
@@ -10,9 +11,22 @@
 			flex-direction: column;
 			min-height: 100vh;
 		}
+		h1{
+			display: flex;
+			justify-content: center;
+			text-align: center;
+
+		}
+		#foto{
+			display: block;
+			justify-content: space-between;
+			padding :5px;
+			margin:50px;
+		}
 	</style>
 </head>
 <body>
+	<h1>Shto Foton :</h1>
 	<?php if (isset($_GET['error'])): ?>
 		<p><?php echo $_GET['error']; ?></p>
 	<?php endif ?>
@@ -20,10 +34,10 @@
            method="post"
            enctype="multipart/form-data">
 
-           <input type="file" 
+           <input id="foto" type="file" 
                   name="my_image">
 
-           <input type="submit" 
+           <input id="foto" type="submit" 
                   name="submit"
                   value="Upload">
      	

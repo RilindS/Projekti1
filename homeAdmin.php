@@ -63,7 +63,7 @@ if(!isset($_SESSION['admin_name'])){
       </div> 
           <h1 id="p-h1">PARTNERET TANE KRYESORE JANE:</h1>
         
-          <div class="foto-container">
+          <div class="photos">
             
           <?php 
           $sql = "SELECT * FROM images ORDER BY id DESC";
@@ -72,13 +72,13 @@ if(!isset($_SESSION['admin_name'])){
           if (mysqli_num_rows($res) > 0) {
           	while ($images = mysqli_fetch_assoc($res)) {  ?>
              
-             <div class="rubrika-admin">
+             <div class="rubrika" >
              	<img src="images/<?=$images['image_url']?>" alt="" class="img" height="500px" width="450px" >
                  <div class="button">
                   <button onclick="location.href='order.php'" type="button" class="blue-button">REZERVO TAXI</button>
               </div>
             </div>
-        </div>	
+             
       <?php } }?>
   </div>
 </main>

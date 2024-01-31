@@ -29,13 +29,16 @@ if(!isset($_SESSION['user_name'])){
             <img src="images/taxi-logo.png" alt="logo" width="20%">
         </div>
         <div class="links">
-        <!-- <a href="logout.php" class="btn">LOG OUT</a> -->
-             <a href="home.php" class="btn">LOG OUT</a>
+            <a href="home.php" class="btn">LOG OUT</a>
+            <!-- <a href="dashboard.php">DASHBOARD</a>   -->
+             <!-- <a href="login_form.php" >LOG IN</a>  -->
             <a href="homeUser.php" id="active">HOME</a>
-            <a href="about.php">ABOUT</a>
-            <a href="order.php">ORDER</a>
-            <a href="contact.php">CONTACT</a>
-            <a href="aplikimi.php">APLIKO PER PUNE</a>
+            <a href="about.php">ABOUT</a>   
+            <!-- <a href="shtoKompanin.php">SHTO KOMPANI</a> -->
+
+             <a href="order.php">ORDER</a> 
+             <a href="contact.php">CONTACT</a> 
+             <a href="aplikimi.php">APLIKO PER PUNE</a> 
         </div>
      </header>
      <main>
@@ -45,7 +48,8 @@ if(!isset($_SESSION['user_name'])){
               
                   
       </div>
-      <h1 class="welcome" style="text-align:center;font-size:13px;">Welcome user : <span><?php echo $_SESSION['user_name'] ?></span></h1>
+      <h1 class="welcome" style="text-align:center;font-size:13px;">Welcome User : <span><?php echo $_SESSION['user_name'] ?></span></h1>
+
 
       <div class="Sherbimet">
           <h1>BASHKEPUNIMI ME NE OFRON:</h1>
@@ -58,45 +62,24 @@ if(!isset($_SESSION['user_name'])){
           </div>
       </div> 
           <h1 id="p-h1">PARTNERET TANE KRYESORE JANE:</h1>
-      
+        
           <div class="photos">
-              <div class="rubrika">
-              <img src="images/blue-taxi2.png" alt="" class="img" height="500px" width="450px">
-              <div class="button">
-                  <button onclick="location.href='order.php'" type="button" class="blue-button">REZERVO BLUE TAXI</button>
-              </div>
-          </div>
-          <div class="rubrika"> 
-              <img src="images/e-taxi-tesla.png" alt="" class="img" height="500px" width="450px">
-              <div class="button">
-                  <button onclick="location.href='order.php'" type="button" class="tesla-button">REZERVO E-TAXI TESLA</button>
-              </div>
-          </div>
-          <div class="rubrika">
-              <img src="images/online-taxi.png" alt="" class="img" height="500px" width="450px">
-              <div class="button">
-                  <button onclick="location.href='order.php'" type="button" class="online-button">REZERVO ONLINE TAXI</button>
-              </div>
-          </div>
-          <div class="rubrika">
-              <img src="images/Pink-taxi2.png" alt="" class="img" height="500px" width="450px">
-              <div class="button">
-                  <button onclick="location.href='order.php'" type="button" class="pink-button">REZERVO PINK TAXI</button>
-              </div>
-          </div>
-          <div class="rubrika">
-              <img src="images/golden-taxi2.png" alt="" class="img" height="500px" width="450px">
-              <div class="button">
-                  <button onclick="location.href='order.php'" type="button" class="golden-button">REZERVO GOLDEN TAXI</button>
-              </div>
-          </div>
+            
+          <?php 
+          $sql = "SELECT * FROM images ORDER BY id DESC";
+          $res = mysqli_query($conn,  $sql);
 
-          <div class="rubrika">
-              <img src="images/urban-taxi.png" alt="" class="img" height="500px" width="450px">
-              <div class="button">
-                  <button onclick="location.href='order.php'" type="button" class="urban-button">REZERVO URBAN TAXI</button>
+          if (mysqli_num_rows($res) > 0) {
+          	while ($images = mysqli_fetch_assoc($res)) {  ?>
+             
+             <div class="rubrika" >
+             	<img src="images/<?=$images['image_url']?>" alt="" class="img" height="500px" width="450px" >
+                 <div class="button">
+                  <button onclick="location.href='order.php'" type="button" class="blue-button">REZERVO TAXI</button>
               </div>
-          </div>
+            </div>
+             
+      <?php } }?>
   </div>
 </main>
     <footer>
@@ -133,6 +116,7 @@ if(!isset($_SESSION['user_name'])){
 </main>
 </body>
 </html>
+
 
 <?php
     

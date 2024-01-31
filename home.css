@@ -34,12 +34,14 @@ span{
 
 
 .photos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    margin: 20px;
+    
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+        align-content: flex-start;
+    
 }
 
 .bg-photo{
