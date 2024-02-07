@@ -1,5 +1,12 @@
 <?php
-@include 'config.php';
+include 'DatabaseConnection.php';
+
+
+$dbConnection = new DatabaseConnection();
+
+$conn = $dbConnection->startConnection();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,12 +30,12 @@
             <!-- <a href="home.php" class="btn">LOG OUT</a> -->
             <!-- <a href="dashboard.php">DASHBOARD</a>   -->
             <a href="login_form.php" >LOG IN</a>   
-            <a href="homeAdmin.php" id="active">HOME</a>
+             <a href="home.php" id="active">HOME</a> 
             <a href="about.php">ABOUT</a>   
              <!-- <a href="shtoKompanin.php">SHTO KOMPANI</a> -->
 
               <a href="order.php">ORDER</a>
-             <!-- <a href="contact.php">CONTACT</a>  -->
+              <a href="contact.php">CONTACT</a> 
               <a href="aplikimi.php">APLIKO PER PUNE</a>  
         </div>
      </header>
@@ -56,13 +63,14 @@
         
           <div class="photos">
             
-          <?php 
-          $sql = "SELECT * FROM images ORDER BY id DESC";
-          $res = mysqli_query($conn,  $sql);
-
-          if (mysqli_num_rows($res) > 0) {
-          	while ($images = mysqli_fetch_assoc($res)) {  ?>
              
+          <?php 
+                $sql = "SELECT * FROM images ORDER BY id DESC";
+                 $res = $conn->query($sql);
+
+                if ($res->rowCount() > 0) {
+                    while ($images = $res->fetch(PDO::FETCH_ASSOC)) {  
+        ?>
              <div class="rubrika" >
              	<img src="images/<?=$images['image_url']?>" alt="" class="img" height="500px" width="450px" >
                  <div class="button">

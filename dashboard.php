@@ -1,11 +1,17 @@
 
 <?php 
-
+session_start();
 include "DatabaseConnection.php";
 include_once "aplikimetRepository.php";
 include ("ContactRepository.php");
 include("RezervimiRepository.php");
 include("PerdoruesitRepository.php");
+
+if(!isset($_SESSION['admin_name'])){
+    header('location:login_form.php');
+    exit(); 
+ }
+
 
 $strep = new aplikimetRepository();
 $allAplikimet = $strep->getAllAplikimetPunes();

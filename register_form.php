@@ -1,20 +1,27 @@
 <?php
 
-@include 'config.php';
+session_start();
+
+
+include_once 'DatabaseConnection.php';
 
 if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $name = $_POST['name'];
+   $email = $_POST['email'];
    $pass = md5($_POST['password']);
    $cpass = md5($_POST['cpassword']);
    $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+   $dbConnection = new DatabaseConnection();
+   
+   $conn = $dbConnection->startConnection();
 
-   $result = mysqli_query($conn, $select);
+   $select = " SELECT * FROM user_form WHERE email = :email && password = :password ";
+   $stmt = $conn->prepare($select);
+   $stmt->execute(['email' => $email, 'password' => $pass]);
 
-   if(mysqli_num_rows($result) > 0){
+   if($stmt->rowCount() > 0){
 
       $error[] = 'user already exist! ';
 
@@ -23,8 +30,9 @@ if(isset($_POST['submit'])){
       if($pass != $cpass){
          $error[] = 'password not matched!';
       }else{
-         $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
-         mysqli_query($conn, $insert);
+         $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES(:name, :email, :password, :user_type)";
+         $stmt = $conn->prepare($insert);
+         $stmt->execute(['name' => $name, 'email' => $email, 'password' => $pass, 'user_type' => $user_type]);
          header('location:login_form.php');
       }
    }
@@ -92,16 +100,11 @@ if (isset($_POST['submit'])) {
 
       <select name="user_type">
          <option value="user">user</option>
-<<<<<<< HEAD
 
-       <option value="admin">admin</option> 
 
-           <!-- <option value="admin">admin</option> -->
-=======
-      <!-- <option value="admin">admin</option>  -->
+       <!-- <option value="admin">admin</option>  -->
 
-         <!-- <option value="admin">admin</option> -->
->>>>>>> f731e770cdbd9a1abc6f5c1773ab7653d29df12f
+
 
       </select>
       <input type="submit" name="submit" value="register" class="form-btn"  >

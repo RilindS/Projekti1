@@ -1,42 +1,60 @@
 <?php
-
-@include 'config.php';
-
 session_start();
 
-if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
+include 'DatabaseConnection.php';
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
 
-   $result = mysqli_query($conn, $select);
 
-   if(mysqli_num_rows($result) > 0){
+if(isset($_POST['submit'])) {
 
-      $row = mysqli_fetch_array($result);
+    $dbConnection = new DatabaseConnection();
+    
+    
+    $conn = $dbConnection->startConnection();
 
-      if($row['user_type'] == 'admin'){
 
-         $_SESSION['admin_name'] = $row['name'];
-         header('location:homeAdmin.php');
+    if($conn) {
+       
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
 
-      }elseif($row['user_type'] == 'user'){
+      
+        $sql = "SELECT * FROM user_form WHERE email = :email AND password = :password";
 
-         $_SESSION['user_name'] = $row['name'];
-         header('location:homeUser.php');
+        
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['email' => $email, 'password' => $password]);
+        $user = $stmt->fetch();
 
-      }
-     
-   }else{
-      $error[] = 'Email-i ose password-i jane gabim!';
-   }
+        
+        if ($user) {
+        
+            $user_type = $user['user_type'];
 
-};
+            if ($user_type == 'admin') {
+            
+                $_SESSION['admin_name'] = $user['name'];
+             
+                header('Location: homeAdmin.php');
+                exit();
+            } 
+             
+                if($user_type == 'user'){
+                  $_SESSION['user_name'] = $user['name'];
+
+                 header('Location: homeUser.php');
+                 exit();
+         }
+            
+        } else {
+            $error[] = 'Email-i ose password-i janë gabim!';
+        }
+    } else {
+        $error[] = 'Problem në lidhjen me bazën e të dhënave!';
+    }
+}
+
 ?>
 
 <!DOCTYPE html>

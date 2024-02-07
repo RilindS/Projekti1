@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $mbiemri = $_POST['mbiemri'];
     $email = $_POST['email'];
     $nenshtetesia = $_POST['nenshtetesia'];
-    $qyteti = $_POST['qyteti'];
+    $qyteti = $_POST['qyteti'];//verejtje??
     $adresa = $_POST['address'];
 
     $errors = array();
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 
     $AplikimetRepository = new aplikimetRepository();
     $AplikimetRepository->insertAplikimet($Aplikimetpunes);
-    header("location:home.php");
+    header("location:aplikimi.php");
     }
 }
 ?>

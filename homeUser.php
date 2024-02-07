@@ -1,13 +1,17 @@
 
 <?php
-
-@include 'config.php';
-
 session_start();
+
+include 'DatabaseConnection.php';
+
 
 if(!isset($_SESSION['user_name'])){
    header('location:login_form.php');
+   exit(); 
+
 }
+$dbConnection = new DatabaseConnection();
+$conn = $dbConnection->startConnection();
 
 ?>
 <!DOCTYPE html>
@@ -29,7 +33,7 @@ if(!isset($_SESSION['user_name'])){
             <img src="images/taxi-logo.png" alt="logo" width="20%">
         </div>
         <div class="links">
-            <a href="home.php" class="btn">LOG OUT</a>
+            <a href="logout.php" class="btn">LOG OUT</a>
             <!-- <a href="dashboard.php">DASHBOARD</a>   -->
              <!-- <a href="login_form.php" >LOG IN</a>  -->
             <a href="homeUser.php" id="active">HOME</a>
@@ -66,11 +70,12 @@ if(!isset($_SESSION['user_name'])){
           <div class="photos">
             
           <?php 
-          $sql = "SELECT * FROM images ORDER BY id DESC";
-          $res = mysqli_query($conn,  $sql);
+                $sql = "SELECT * FROM images ORDER BY id DESC";
+                 $res = $conn->query($sql);
 
-          if (mysqli_num_rows($res) > 0) {
-          	while ($images = mysqli_fetch_assoc($res)) {  ?>
+                if ($res->rowCount() > 0) {
+                    while ($images = $res->fetch(PDO::FETCH_ASSOC)) {  
+        ?>
              
              <div class="rubrika" >
              	<img src="images/<?=$images['image_url']?>" alt="" class="img" height="500px" width="450px" >

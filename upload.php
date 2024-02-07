@@ -2,7 +2,6 @@
 
 if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 	include "DatabaseConnection.php";
-    include "config.php";
 
 	echo "<pre>";
 	print_r($_FILES['my_image']);
@@ -15,7 +14,7 @@ if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 
 	if ($error === 0) {
 		if ($img_size > 1250000000) {
-			$em = "Sorry, your file is too large.";
+			$em = "Imazhi është shumë i madh";
 		    header("Location: shtoKompanin.php?error=$em");
 		}else {
 			$img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
@@ -28,21 +27,29 @@ if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 				$img_upload_path = 'images/'.$new_img_name;
 				move_uploaded_file($tmp_name, $img_upload_path);
 
-				// Insert into Database
-				$sql = "INSERT INTO images(image_url) 
-				        VALUES('$new_img_name')";
-				mysqli_query($conn, $sql);
-				header("Location: homeAdmin.php");
+				
+				$conn = new DatabaseConnection();
+				$db_conn = $conn->startConnection(); 
+				if ($db_conn) {
+					$sql = "INSERT INTO images(image_url) 
+					        VALUES('$new_img_name')";
+					$db_conn->query($sql);
+					header("Location: homeAdmin.php");
+				} else {
+					$em = "Gabim në lidhjen me bazën e të dhënave!";
+					header("Location: shtoKompanin.php?error=$em");
+				}
 			}else {
-				$em = "You can't upload files of this type";
+				$em = "Ju nuk mund të ngarkoni skedarë të këtij lloji";
 		        header("Location: shtoKompanin.php?error=$em");
 			}
 		}
 	}else {
-		$em = "unknown error occurred!";
+		$em = "Gabim i panjohur ka ndodhur!";
 		header("Location: shtoKompanin.php?error=$em");
 	}
 
 }else {
 	header("Location: shtoKompanin.php");
 }
+?>

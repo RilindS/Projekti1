@@ -1,8 +1,19 @@
+<?php
+session_start();
+
+include 'DatabaseConnection.php';
+
+if(!isset($_SESSION['admin_name'])){
+   header('location:login_form.php');
+   exit(); 
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 
-	<title>Image Upload Using PHP</title>
+	<title>Shto Kompanin</title>
 	<style>
 		body {
 			display: flex;
