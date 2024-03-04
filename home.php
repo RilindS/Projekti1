@@ -61,17 +61,17 @@ $conn = $dbConnection->startConnection();
       </div> 
           <h1 id="p-h1">PARTNERET TANE KRYESORE JANE:</h1>
         
-          <div class="photos">
+            <div class="photos">
             
              
-          <?php 
+                <?php 
                 $sql = "SELECT * FROM images ORDER BY id DESC";
                  $res = $conn->query($sql);
 
                 if ($res->rowCount() > 0) {
                     while ($images = $res->fetch(PDO::FETCH_ASSOC)) {  
-        ?>
-             <div class="rubrika" >
+                ?>
+                <div class="rubrika" >
              	<img src="images/<?=$images['image_url']?>" alt="" class="img" height="500px" width="450px" >
                  <div class="button">
                   <button onclick="location.href='order.php'" type="button" class="blue-button">REZERVO TAXI</button>

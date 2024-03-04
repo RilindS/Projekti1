@@ -29,30 +29,58 @@
      <div class="container">
         <p class="paragrafi">
             Mirësevini në faqen tonë, një destinacion virtual ku bashkohen shërbimet e transportit më të përshtatshme dhe të besueshme. Ne jemi një kompani taksish e orientuar nga një ekip pasionant i profesionistëve të transportit, të përkushtuar për të ofruar një përvojë të jashtëzakonshme për udhëtarët tanë. Me një flotë të përzgjedhur me kujdes të makinave të reja dhe shoferë me përvojë, ne sigurojmë udhëtime të rehatshme dhe të sigurta për klientët tanë. Përmes teknologjisë moderne, ofrojmë një platformë të lehtë për përdorim për rezervime online, duke garantuar që udhëtimi juaj të jetë i përshtatshëm dhe i organizuar me kujdes. Misja jonë është të sjellim një standard të lartë të shërbimit taksive, duke shërbyer komunitetin lokal dhe duke përgjigjur nevojave të çdo udhëtari me përkushtim dhe kujdes të veçantë. Ju ftojmë të përjetoni një udhëtim të paharrueshëm me ne dhe të bëheni pjesë e familjes së taksive tonë të përkushtuar.</p>
-            <div class="slider-frame">
-            <div class="slide-images">
-                    <div class="img-container">
-                        <img src="images/blue-taxi3.png" id="img">
-                    </div>
-                    <div class="img-container">
-                        <img src="images/e-taxi-tesla.png" id="img">
-                    </div>
-                    <div class="img-container">
-                        <img src="images/online-taxi.png" id="img">
-                    </div>
-                    <div class="img-container">
-                        <img src="images/Pink-taxi2.png" id="img">
-                    </div>
-                    <div class="img-container">
-                        <img src="images/golden-taxi2.png" id="img">
-                    </div>
-                    <div class="img-container">
-                        <img src="images/urban-taxi.png" id="img">
-                    </div>
-            </div>
-        </div>
-</div>
+    </div>
 
+<div id="kontenti">
+        <header>
+        <h2>Slide Show: shfaqja e imazheve </h2>
+        <img id="slideshow" />
+        </header>
+        <!-- <button onclick="changeImg()">Next</button> -->
+    </div>
+    <style type ="text/css">
+    #kontenti {
+        display: flex ;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        font-family: 'Segoe UI light', Tahoma;
+        width: 500px;
+        margin:0 auto;
+    }
+    #kontenti img {
+        max-width: 700px;
+        height: 400px;
+    }
+    button{ 
+        border-radius: 100%;
+        border-style: inherit;
+        width: 40px;
+        height: 40px;
+        font: 10pt;
+    }
+    button:hover{
+        background-color: rgb(189, 186, 186);
+    }
+    </style>
+<script>
+        let i = 0;
+        let imgArray = ['images/blue-taxi1.png','images/golden-taxi2.png','images/Pink-taxi2.png','images/urban-taxi.png'];
+
+        function changeImg(){
+            document.getElementById('slideshow').src = imgArray[i];
+
+            if(i< imgArray.length -1){
+                i++;
+            }
+            else{
+                i=0;
+            }
+            setTimeout("changeImg()", 2600);
+        }
+        document.addEventListener(onload, changeImg());
+        
+    </script>
      
     </main>
 
@@ -86,5 +114,6 @@
                 
             </div>
         </footer>
+        
 </body>
 </html>

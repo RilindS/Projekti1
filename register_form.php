@@ -98,8 +98,8 @@ if (isset($_POST['submit'])) {
       <input type="password" id="cpassword"name="cpassword"  placeholder="Konfirmo password-in">
       <div class="error-message" id="cpasswordError"></div>
 
-      <select name="user_type">
-         <option value="user">user</option>
+      <!-- <select name="user_type"> -->
+         <!-- <option value="user">user</option> -->
 
 
        <!-- <option value="admin">admin</option>  -->

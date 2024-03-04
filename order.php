@@ -257,6 +257,7 @@ if (isset($_POST['submit'])) {
 
     let location = document.getElementById('location').value;
     let locationError = document.getElementById('locationError');
+    
     let allFieldsError = document.getElementById('allFieldsError');
 
     let hasErrors = false; 
