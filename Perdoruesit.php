@@ -10,11 +10,11 @@ class Perdoruesit{
   private $password;
   private $confirmpassword;
 
-    public function __construct($id,$emri,$email,$password,$confirmpassword){
+    public function __construct($emri,$email,$password){
         $this->emri = $emri;
         $this->email = $email;
         $this->password = $password;
-        $this->confirmpassword = $confirmpassword;
+        // $this->confirmpassword = $confirmpassword;
     }
 
     public function getEmri(){

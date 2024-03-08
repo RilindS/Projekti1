@@ -42,8 +42,11 @@ $allPerdoruesit = $stre3->getAllPerdurusit();
                 <th>Email</th>
                 <th>Passwordi</th>
                 <th>user_type</th>
-                <th></th>
-                <th></th>
+                
+                <th>Mundesit</th>
+                <th><td><a href='InsertU.php'>Shto Perdorues</a></td></th>
+
+            
             </tr>
             </thead>
             <tbody>
@@ -72,8 +75,8 @@ $allPerdoruesit = $stre3->getAllPerdurusit();
                 <th>Email</th>
                 <th>NrKontaktues</th>
                 <th>Lokacioni</th>
-                <th></th>
-                <th></th>
+                <th>Mundesit</th>
+                <th>  <td><a href='InsertR.php'>Shto Rezervim Taksit</a></td></th>
          
             </tr>
             </thead>
@@ -106,10 +109,11 @@ $allPerdoruesit = $stre3->getAllPerdurusit();
                 <th>Mbiemri</th>
                 <th>Emaili</th>
                 <th>Nenshtetsia</th>
-                <th>Qyteti</th>
+                
                 <th>Adresa</th>
                 <th>Mundesit</th>
-                <th></th>
+              <th>  <td><a href='InsertA.php'>Shto Aplimim Punes</a></td></th>
+
                
             </tr>
             </thead>
@@ -120,7 +124,7 @@ $allPerdoruesit = $stre3->getAllPerdurusit();
                         <td><?php echo $student['mbiemri'];?></td>
                         <td><?php echo $student['email'];?></td>
                         <td><?php echo $student['nenshtetsia'];?></td>
-                        <td><?php echo $student['qyteti'];?></td>
+                        <!-- <td><?php// echo $student['qyteti'];?></td> -->
                         <td><?php echo $student['adresa'];?></td>
                      
                         <td><a href='edit.php?id=<?php echo $student['id']?>'>Edit</a></td> <!--e dergojme id ne url permes pjeses ?id= dhe permes kodit ne php e marrim nga studenti i cili eshte i paraqitur ne kete rresht-->
@@ -143,8 +147,8 @@ $allPerdoruesit = $stre3->getAllPerdurusit();
                 <th>Mbiemri</th>
                 <th>Emaili</th>
                 <th>Ankesa</th>
-                <th></th>
-                <th></th>
+                <th>Mundesit</th>
+                <th>  <td><a href='InsertK.php'>Shto Contact US</a></td></th>
          
             </tr>
             </thead>

@@ -96,7 +96,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="error-message" id="datalindjesError"></div>
 
-                 <div class="input-field">
+                 <!-- <div class="input-field">
                     <p>Qyteti</p>       
                     <select id="qytetet" name="qyteti">
                         <option value="" disabled selected>Zgjidh një qytet</option>
@@ -109,7 +109,7 @@ if (isset($_POST['submit'])) {
                         <option value="Podujeve">Podujeve</option>
                         <option value="Fushe Kosove">Fushe Kosove</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="error-message" id="qytetiError"></div>
 
                 <div id="input-field">

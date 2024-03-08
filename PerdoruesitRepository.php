@@ -22,15 +22,15 @@
             $conn = $this->connection;
 
             $emri = $Perdurusi->getEmri();
-            $emaili = $Perdurusi->getEmail();
+            $email = $Perdurusi->getEmail();
             $password = $Perdurusi->getPassword();
-            $confirmpassword = $Perdurusi->getConfirmpassword();
+            // $confirmpassword = $Perdurusi->getConfirmpassword();
            
 
-            $sql = "INSERT INTO user_form(name, email , password,user_type) VALUES (?,?,?,?)";
+            $sql = "INSERT INTO user_form(name, email , password) VALUES (?,?,?)";
 
             $statement = $conn->prepare($sql);
-            $statement->execute([$emri, $emaili, $password,$confirmpassword]);
+            $statement->execute([$emri, $email, $password]);
 
             echo "<script>alert('U shtua me sukses!')</script>";
         }
